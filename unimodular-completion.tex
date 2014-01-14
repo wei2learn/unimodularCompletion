@@ -1,0 +1,1314 @@
+%% LyX 2.0.6 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[twoside]{sig-alternate}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{prettyref}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[authoryear]{natbib}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 1},backref=section,colorlinks=true]
+ {hyperref}
+\hypersetup{
+ dvips,linkcolor=blue,citecolor=red,urlcolor=green,pdftex=true,hyperindex=true,pdfstartview=FitH,pdfpagelabels=true,colorlinks=true,linkcolor=blue,citecolor=red,urlcolor=green,hypertexnames=false}
+\usepackage{breakurl}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\providecommand{\algorithmname}{Algorithm}
+\floatname{algorithm}{\protect\algorithmname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+\usepackage{algorithmic}
+\newcommand{\forbody}[1]{ #1 \ENDFOR }
+\newcommand{\ifbody}[1]{ #1  \ENDIF}
+\newcommand{\whilebody}[1]{ #1  \ENDWHILE}
+\renewcommand{\algorithmicprint}{\textbf{draw}}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+ \newtheorem{thm}{Theorem}[section]
+ \newtheorem{lem}[thm]{Lemma}
+ \newtheorem{defn}[thm]{Definition}
+ \newtheorem{exmp}[thm]{Example}
+
+\@ifundefined{date}{}{\date{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\usepackage{algorithm}\usepackage{algorithmic}\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algorithm}
+\usepackage{algorithmic}
+%\newcommand{\forbody}[1]{ #1 \ENDFOR }
+%\newcommand{\ifbody}[1]{ #1  \ENDIF}
+%\newcommand{\Comment}[1]{ }
+\newcommand{\Comment}[1]{ #1}
+%\newcommand{\whilebody}[1]{ #1  \ENDWHILE}
+\renewcommand{\algorithmicprint}{\textbf{draw}}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\sO}[2]{{#1}^{#2+o(1)}}
+\newcommand{\sOsO}[4]{{#1}^{#2+o(1)}\*{#3}^{#4+o(1)}}
+\newcommand{\OsO}[4]{{#1}^{#2}\*{#3}^{#4+o(1)}}
+\newcommand{\sOsconst}[3]{{#1}^{#2+o(1)}\*{#3}^{o(1)}}
+
+
+%\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{prop}{Proposition}
+%\newtheorem{defn}{Definition}
+\newtheorem{Algo}{Algorithm}
+\newtheorem{example}{Example}
+%\newtheorem{defn}[thm]{Definition}
+\newtheorem{rem}{Remark}
+%\newtheorem{lem}{Lemma}
+
+
+\newenvironment{Alg}{\noindent  {\bf Algorithm} \hspace*{0.05cm}}{
+
+}\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\K}{ {\rm K}}
+\newcommand{\revCol}{ {\rm revCol}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\tbigO}{\widetilde{\mathcal{O}}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\ocL}{\overline{\mathcal{L}}}
+\newcommand{\tcL}{\widetilde{\mathcal{L}}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\oA}{\overline{A}}
+\newcommand{\GL}{{\rm GL}\,}
+\newcommand{\rank}{{\rm rank}\,}
+\newcommand{\reverse}{{\rm Reverse}\,}
+\newcommand{\cdeg}{{\rm cdeg}\,}
+\newcommand{\rdeg}{{\rm rdeg}\,}
+\newcommand{\diag}{{\rm diag}\,}
+\newcommand{\val}{{\rm val}\,}
+\newcommand{\order}{{\rm ord}\,}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+
+\newcommand{\Return}{\textbf{Return}}
+\newcommand{\While}{\textbf{While}}
+\newcommand{\For}{\textbf{For}}
+\newcommand{\If}{\textbf{If}}
+\newcommand{\nv}{\textbf{MatrixPolynomialInverse}}
+\newcommand{\then}{\textbf{then}}
+\newcommand{\ddo}{\textbf{do}}
+\newcommand{\edo}{\textbf{end do}}
+\newcommand{\eif}{\textbf{end if}}
+\newcommand{\cdim}{{\rm coldim}}
+\newcommand{\tO}{O^{\sim}}
+
+\def\StorjohannTransform{\qopname\relax n{StorjohannTransform}}
+\def\TransformUnbalanced{\qopname\relax n{TransformUnbalanced}}
+\def\rowDimension{\qopname\relax n{rowDimension}}
+\def\columnDimension{\qopname\relax n{columnDimension}}
+\DeclareMathOperator{\re}{rem}
+\DeclareMathOperator{\coeff}{coeff}
+\DeclareMathOperator{\lcoeff}{lcoeff}
+\DeclareMathOperator{\inv}{inverse}
+\DeclareMathOperator{\rev}{rev}
+\DeclareMathOperator{\colRev}{colRev}
+\DeclareMathOperator{\rowRev}{rowRev}
+\DeclareMathOperator{\unimodularCompletion}{unimodularCompletion}
+\DeclareMathOperator{\hermiteDiagonal}{hermiteDiagonal}
+\DeclareMathOperator{\mnbr}{MinimalKernelBasisTranspose}
+\DeclareMathOperator{\mnbrp}{MinimalKernelBasisWithRankProfile}
+\DeclareMathOperator{\colBasis}{ColumnBasis}
+\DeclareMathOperator{\rankProfile}{rankProfile}
+\def\mab{\qopname\relax n{OrderBasis}}
+\def\mnbrs{\qopname\relax n{MinimalNullspacerBasisRankSensitive}}
+\def\mmab{\qopname\relax n{FastBasis}}
+\def\umab{\qopname\relax n{UnbalancedFastOrderBasis}}
+\def\mnb{\qopname\relax n{MinimalKernelBasis ~ }}
+\newcommand{\bb}{\\}
+
+%\input{macro}
+% variables
+\newcommand{\dg}{r}
+\newcommand{\dz}{n}
+\newcommand{\A}{\ensuremath{A}}
+\newcommand{\I}{\ensuremath{I}}
+\newcommand{\B}{\ensuremath{B}}
+%\newcommand{\U}{\ensuremath{U}}
+\newcommand{\V}{\ensuremath{V}}
+\newcommand{\W}{\ensuremath{W}}
+\newcommand{\Her}{\ensuremath{H}}
+\newcommand{\Hi}{\ensuremath{H}}
+\newcommand{\Sm}{\ensuremath{S}}
+\newcommand{\Vn}{\ensuremath{V_{\mathfrak{n}}}}
+\newcommand{\Vi}{\ensuremath{V_{\mathfrak{i}}}}
+\newcommand{\Wu}{\ensuremath{W_{\mathfrak{u}}}}
+\newcommand{\Wd}{\ensuremath{W_{\mathfrak{d}}}}
+\newcommand{\An}{\ensuremath{A_{\mathfrak{n}}}}
+\newcommand{\Ai}{\ensuremath{A_{\mathfrak{i}}}}
+\newcommand{\Au}{\ensuremath{A_{\mathfrak{u}}}}
+\newcommand{\Ad}{\ensuremath{A_{\mathfrak{n}}}}
+\renewcommand{\Pi}{\ensuremath{P_{\mathfrak{i}}}}
+\newcommand{\Pn}{\ensuremath{P_{\mathfrak{n}}}}
+\newcommand{\Pu}{\ensuremath{P_{\mathfrak{u}}}}
+\newcommand{\Pd}{\ensuremath{P_{\mathfrak{d}}}}
+
+% Groups
+\newcommand{\gva}{\ensuremath{\mathcal{G}}}
+
+
+
+
+
+
+
+
+\def\qed{\hspace*{2mm} \hfill $\Box $\bigskip}
+\newcommand{\ds}{\displaystyle}
+
+
+\title{Efficient Unimodular Completion of Polynomial Matrices}
+
+\author{
+Wei Zhou and  George Labahn
+         \thanks{
+             Cheriton School of Computer Science, University of Waterloo, 
+             Waterloo ON, Canada N2L 3G1 \texttt{\{w2zhou,glabahn\}@uwaterloo.ca}
+          }
+}
+
+\makeatother
+
+\begin{document}
+\maketitle 
+\begin{abstract}
+Given a matrix $\mathbf{F}\in\mathbb{K}[x]^{m\times n}$ with $m<n$
+of univariate polynomials over a field $\mathbb{K}$ we give an efficient
+algorithm for computing a unimodular completion of $\mathbf{F}$.
+That is, our algorithm finds a polynomial matrix $\mathbf{G}\in\mathbb{K}[x]^{(n-m)\times n}$
+such that the square matrix $\left[\begin{array}{c}
+\mathbf{F}\\
+\mathbf{G}
+\end{array}\right]$ is unimodular. Our algorithm is deterministic and computes such a
+completion, when it exists, with cost $O^{\sim}\left(n^{\omega}s\right)$
+field operations from $\mathbb{K}$,where $s$ is the average of the
+$m$ largest column degrees of $\mathbf{F}$. Here $O^{\sim}$ is
+big-O but with log factors removed. If a unimodular completion does
+not exist for $\mathbf{F}$, our algorithm computes a unimodular completion
+for a right cofactor of a column basis of $\mathbf{F}$, or equivalently,
+computes a completion that preserves the generalized determinant,
+defined as the product of the entries of the Smith normal form.
+\end{abstract}
+
+\section{\label{sec:intro}Introduction}
+
+A square matrix of univariate polynomials over a field $\mathbb{K}$
+is unimodular if its determinant is a nonzero constant in $\mathbb{K}$.
+We consider the unimodular completion 
+
+Let $\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$ with $m<n$
+be a full-rank rectangular matrix. We consider the unimodular completion
+problem of finding a second rectangular matrix $\mathbf{G}\in\mathbb{K}\left[x\right]^{(n-m)\times n}$
+such that $\left[\begin{array}{c}
+\mathbf{F}\\
+\mathbf{G}
+\end{array}\right]$ is unimodular. In fact, we consider the more general %completion 
+problem of finding $\mathbf{G}\in\mathbb{K}\left[x\right]^{(n-m)\times n}$
+such that the $\mathbf{F}$ and $\left[\begin{array}{c}
+\mathbf{F}\\
+\mathbf{G}
+\end{array}\right]$ have the same \emph{generalized determinant}. Here the generalized
+determinant denotes the product of the nonzero diagonal elements of
+its Smith form. The standard unimodular completion problem is then
+the special case where the generalized determinant of $\mathbf{F}$
+is $1$. %
+\begin{comment}
+We also wish to have a type of degree minimality for our completion
+problem, that is, that the degree of our completion are consistent
+with the degrees of our input matrix.
+\end{comment}
+{} %By this we mean if $\mathbf{F}$ has column degrees bounded by a vector of nonnegative integers $\vec{s}$ then we also require that $\mathbf{G}^{T}$ has  $\left(-\vec{s}\right)$-minimal rows. 
+
+
+In the case of rectangular matrices of multivariate polynomials, the
+unimodular completion problem is well known for its role in solving
+Serre's conjecture that projective modules over polynomial rings are
+free \citet{lam1978}. Serre's conjecture was proved independently
+by Quillen and Suslin in 1976 using unimodular completion \citep{YoulaPickel}.
+Later on their nonconstructive methods were replaced by constructive
+methods, for example that of Logar and Sturmfels \citep{Sturmfels}.
+Later extensions include the reduction of mathematical systems to
+ones having fewer functions and parameters \citep{CluzeauQuadrat}.
+In general unimodular completion is a useful basic operation in many
+matrix computations \citep{newman1972}. For example, in the case
+of $m=1$ unimodular completion plays a key role in proofs for Hermite
+and Smith normal forms.
+
+Unimodular completions do not exist for all rectangular matrices.
+For example, the matrix $\left[0,x\right]$ cannot be completed to
+a $2\times2$ unimodular matrix. In the case of $m=1$ so that $\mathbf{F}$
+is a single row, a unimodular completion exists if and only if all
+the entries in $\mathbf{F}$ are relatively prime \citep{newman1972}.
+More generally we can show that a unimodular completion of $\mathbf{F}$
+exists if and only if there exists a unimodular matrix $\mathbf{U}$
+such that 
+\begin{equation}
+\mathbf{F}\cdot\mathbf{U}=[I_{m},0].\label{one}
+\end{equation}
+For simplicity and without loss of generality, we focus our discussion
+on the situation where the unimodular completion always exists. For
+an input matrix that cannot be completed to a unimodular matrices,
+we can always factor it as $\mathbf{F}=\mathbf{T}\mathbf{G}$ using
+the column basis algorithm from \citep{zl2013}, where the right factor
+$\mathbf{G}$ can then be unimodularly completed. This can be done
+efficiently. However, an even simpler way is to apply our algorithm
+directly on the input matrix, as the algorithm works effectively on
+any input matrix to compute a completion that preserves the generalized
+determinant.
+
+The algorithm we present in this paper has a a cost of $O^{\sim}\left(n^{\omega}s\right)$
+field operations, where $s$ is the average of the $m$ largest column
+degrees of $\mathbf{F}$. Our approach is to embed our matrix into
+an {\em order basis} problem \citep{BeLa94} in a similar way to
+that used in the shifted minimal kernel basis algorithm of \citep{za2012}.
+In our case we take advantage of the fact that order bases are closely
+related to unimodular matrices when one reverses the order of column
+coefficients.
+
+
+\section{Preliminaries}
+
+In this section we give the basic cost model, notations, and the basic
+definitions and properties of {\em shifted degree}, {\em kernel
+basis}, \emph{column basis, }and {\em order basis} which are needed
+for our discussion and algorithm. In addition, we discuss the various
+ways one can reverse the coefficients of matrix polynomials along
+with the properties of such reversals.
+
+
+\subsection{Cost model}
+
+Algorithms are analyzed by bounding the number of arithmetic operations
+in the coefficient field $\mathbb{K}$ on an algebraic random access
+machine. We will frequently use the fact that the cost of multiplying
+two polynomial matrices with dimension $n$ and degree bounded by
+$d$ is $O^{\sim}(n^{\omega}d)$ field operations from $\mathbb{K}$,
+where $\omega$ is the exponent of matrix multiplication. We refer
+to the book by \citep{vonzurgathen} for more details and references
+about polynomial and matrix multiplication.
+
+
+\subsection{Notations}
+
+For convenience we adopt the following notations in this paper. 
+\begin{description}
+\item [{Comparing~Unordered~Lists}] For two lists $\vec{a}\in\mathbb{Z}^{n}$
+and $\vec{b}\in\mathbb{Z}^{n}$, let $\bar{a}=\left[\bar{a}_{1},\dots,\bar{a}_{n}\right]\in\mathbb{Z}^{n}$
+and $\bar{b}=\left[\bar{b}_{1},\dots,\bar{b}_{n}\right]\in\mathbb{Z}^{n}$
+be the lists consists of the entries of $\vec{a}$ and $\vec{b}$
+but sorted in increasing order. 
+\[
+\begin{cases}
+\vec{a}\ge\vec{b} & \mbox{if }\bar{a}_{i}\ge\bar{b}_{i}\mbox{ for all }i\in\left[1,\dots n\right]\\
+\vec{a}\le\vec{b} & \mbox{if }\bar{a}_{i}\le\bar{b}_{i}\mbox{ for all }i\in\left[1,\dots n\right]\\
+\vec{a}>\vec{b} & \mbox{if }\vec{a}\ge\vec{b}\mbox{ and }\bar{a}_{j}>\bar{b}_{j}\mbox{ for at least one }j\in\left[1,\dots n\right]\\
+\vec{a}<\vec{b} & \mbox{if }\vec{a}\le\vec{b}\mbox{ and }\bar{a}_{j}<\bar{b}_{j}\mbox{ for at least one }j\in\left[1,\dots n\right].
+\end{cases}
+\]
+\begin{comment}
+Summation~Notation For a list $\vec{a}=\left[a_{1},\dots,a_{n}\right]\in\mathbb{Z}^{n}$,
+we write $\sum\vec{a}$ without index to denote the summation of all
+entries in $\vec{a}$. 
+\end{comment}
+%\item [{}]~
+
+\item [{Uniformly~Shift~a~List}] For a list $\vec{a}=\left[a_{1},\dots,a_{n}\right]\in\mathbb{Z}^{n}$
+and $c\in\mathbb{Z}$, we write $\vec{a}+c$ to denote $\vec{a}+\left[c,\dots,c\right]=\left[a_{1}+c,\dots,a_{n}+c\right]$,
+with subtraction handled similarly. 
+\item [{Compare~a~List~with~a~Integer}] For %a list 
+$\vec{a}=\left[a_{1},\dots,a_{n}\right]\in\mathbb{Z}^{n}$ and $c\in\mathbb{Z}$,
+we write $\vec{a}<c$ to denote $\vec{a}<\left[c,\dots,c\right]$,
+and similarly for $>,\le,\ge,=$. 
+\end{description}
+
+\subsection{Shifted degrees}
+
+Our methods depend extensively on the concept of {\em shifted}
+degrees of polynomial matrices \citep{BLV:1999}. For a column vector
+$\mathbf{p}=\left[p_{1},\dots,p_{n}\right]^{T}$ of univariate polynomials
+over a field $\mathbb{K}$, its column degree, denoted by $\cdeg\mathbf{p}$,
+is the maximum of the degrees of the entries of $\mathbf{p}$, that
+is, 
+\[
+\cdeg\mathbf{p}=\max_{1\le i\le n}\deg p_{i}.
+\]
+The \emph{shifted column degree} generalizes this standard column
+degree by taking the maximum after shifting the degrees by a given
+integer vector that is known as a \emph{shift}. More specifically,
+the shifted column degree of $\mathbf{p}$ with respect to a shift
+$\vec{s}=\left[s_{1},\dots,s_{n}\right]\in\mathbb{Z}^{n}$, or the
+\emph{$\vec{s}$-column degree} of $\mathbf{p}$ is 
+\[
+\cdeg_{\vec{s}}\mathbf{p}=\max_{1\le i\le n}[\deg p_{i}+s_{i}]=\cdeg(x^{\vec{s}}\cdot\mathbf{p}),
+\]
+where 
+\[
+x^{\vec{s}}=\diag\left(x^{s_{1}},x^{s_{2}},\dots,x^{s_{n}}\right).
+\]
+For a matrix $\mathbf{P}$, we use $\cdeg\mathbf{P}$ and $\cdeg_{\vec{s}}\mathbf{P}$
+to denote respectively the list of its column degrees and the list
+of its shifted $\vec{s}$-column degrees. When $\vec{s}=\left[0,\dots,0\right]$,
+the shifted column degree specializes to the standard column degree.
+
+Shifted degrees have been used previously in polynomial matrix computations
+and in generalizations of some matrix normal forms \citep{BLV:jsc06}.
+The shifted column degree is equivalent to the notion of \emph{defect}
+commonly used in the literature.
+
+Along with shifted degrees we also make use of the notion of a polynomial
+matrix being column reduced. A polynomial matrix $\mathbf{A}\in\mathbb{K}\left[x\right]^{m\times n}$
+is column reduced if the leading column coefficient matrix, that is
+the matrix 
+\[
+\lcoeff_{\vec{d}}\mathbf{A}=[\coeff(a_{ij},x,d_{j})]_{1\leq i\leq m,1\leq j\leq n},\mbox{ with }\vec{d}=\cdeg\mathbf{A},
+\]
+has full rank. A polynomial matrix $\mathbf{A}$ is $\vec{s}$-column
+reduced if $x^{\vec{s}}\cdot\mathbf{A}$ is column reduced.
+
+The usefulness of the shifted degrees can be seen from their applications
+in polynomial matrix computation problems \citep{zhou:phd2012,ZL2012,za2012}.
+One of its uses is illustrated by the following lemma, which follows
+directly from the definition of shifted degree. %~\cite[Lemma~3.1]{ZLS2012}.% and \citep[Corollary 2.5]{zhou:phd2012}. 
+
+\begin{lem}
+\label{lem:productDegreeBound}If the $\vec{u}$-column degrees of
+$\mathbf{A}\in\mathbb{K}\left[x\right]^{m\times n}$ are bounded by
+the corresponding entries of an integer list $\vec{v}\in\mathbb{Z}^{n}$,
+(or equivalently, the $-\vec{v}$-row degrees of $\mathbf{A}$ are
+bounded by $-\vec{u}$) and the $\vec{v}$-column degrees of $\mathbf{B}\in\mathbb{K}\left[x\right]^{n\times k}$
+are bounded by $\vec{w}\in\mathbb{Z}^{k}$, then the $\vec{u}$-column
+degrees of $\mathbf{A}\mathbf{B}$ are bounded by $\vec{w}$. 
+\end{lem}
+A closely related result involving the shifted degrees is the following
+lemma~\citep[Lemma 2.19]{zhou:phd2012}, which can be viewed as a
+stronger version of the \emph{predictable degree property}~\citep[Theorem~6.3-13]{Kailath:1980}. 
+\begin{lem}
+\label{lem:predictableDegree}Let $\mathbf{A}\in\mathbb{K}[x]^{\ast\times m}$
+be a $\vec{s}$-column reduced matrix with no zero columns and with
+$\cdeg_{\vec{s}}\mathbf{A}=\vec{t}$. Then any matrix $\mathbf{B}\in\mathbb{K}[x]^{m\times\ast}$
+satisfies $\cdeg_{\vec{t}}\mathbf{B}=\cdeg_{\vec{s}}\left(\mathbf{A}\cdot\mathbf{B}\right)$. 
+\end{lem}
+An essential subroutine needed in our algorithm, also based on the
+use of the shifted degrees, is the efficient multiplication of a pair
+of matrices $\mathbf{A}\cdot\mathbf{B}$ with unbalanced degrees.
+The following result follows from \citep[Theorem 5.6]{zhou:phd2012}.
+The notation $\sum\vec{s}$, for any list $\vec{s}$, denotes the
+sum of all entries in $\vec{s}$.
+\begin{thm}
+\label{thm:multiplyUnbalancedMatrices} %
+\begin{comment}
+Let $\mathbf{A}\in\mathbb{K}[x]^{n\times m}$ and $\mathbf{B}\in\mathbb{K}[x]^{m\times m}$
+be given. Suppose $\vec{s}\in\mathbb{Z}_{\geq0}^{n}$ is a shift that
+bounds the corresponding column degrees of $\mathbf{A}$, and $\sum\vec{s}\ge\sum\cdeg_{\vec{s}}\mathbf{B}$.
+Then the product $\mathbf{A}\cdot\mathbf{B}$ can be computed in $O^{\sim}(n^{\omega}\hat{s})$
+field operations from $\mathbb{K}$, where $\hat{s}=\sum\vec{s}/n$
+is the average of the entries of $\vec{s}$. 
+\end{comment}
+Let $\mathbf{A}\in\mathbb{K}\left[x\right]^{m\times n}$ with $m\le n$,
+$\vec{s}\in\mathbb{Z}^{n}$ a shift with entries bounding the column
+degrees of $\mathbf{A}$ and $\xi$, a bound on the sum of the entries
+of $\vec{s}$. Let $\mathbf{B}\in\mathbb{K}\left[x\right]^{n\times k}$
+with $k\in O\left(m\right)$ and the sum $\theta$ of its $\vec{s}$-column
+degrees satisfying $\theta\in O\left(\xi\right)$. Then we can multiply
+$\mathbf{A}$ and $\mathbf{B}$ with a cost of $O^{\sim}(n^{\omega}s)$.
+\end{thm}
+
+\subsection{Kernel bases and column bases}
+
+Let $\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$ be a matrix
+of polynomials over a field $\mathbb{K}$. The kernel of $\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$
+is the $\mathbb{F}\left[x\right]$-module 
+\[
+\left\{ \mathbf{p}\in\mathbb{K}\left[x\right]^{n}\mid\mathbf{F}\cdot\mathbf{p}=0\right\} 
+\]
+with a kernel basis of $\mathbf{F}$ being a basis of this module.
+\begin{defn}
+Given $\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$, a polynomial
+matrix $\mathbf{N}\in\mathbb{K}\left[x\right]^{n\times*}$ is a $\vec{s}$-minimal
+(right) kernel basis of $\mathbf{F}$ if\textbf{ $\mathbf{N}$} is
+a kernel basis of $\mathbf{F}$ and $\mathbf{N}$ is $\vec{s}$-column
+reduced. 
+\end{defn}
+In this paper we require two essential properties of shifted minimal
+kernel bases : a bound on the size of the minimal kernel and the cost
+of computing such a minimal kernel. Both results come from \citep{za2012}.
+\begin{thm}
+\label{thm:boundOfSumOfShiftedDegreesOfKernelBasis} Suppose $\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$
+and $\vec{s}\in\mathbb{Z}_{\ge0}^{n}$ is a shift with entries bounding
+the corresponding column degrees of $\mathbf{F}$. Then the sum of
+the $\vec{s}$-column degrees of any $\vec{s}$-minimal kernel basis
+of $\mathbf{F}$ is bounded by $\xi=\sum\vec{s}$. 
+\end{thm}
+
+\begin{thm}
+\label{thm:kerncomp} Let $\mathbf{F}\in\mathbb{K}^{m\times n}$ and
+$\vec{s}$ be a shift bounding the corresponding column degrees of
+$\mathbf{F}$. Then a $\vec{s}$-minimal kernel basis of $\mathbf{F}$
+can be computed in $O^{\sim}\left(n^{\omega}s\right)$ field operations
+from $\mathbb{K}$, where $s$ is the average of the $m$ largest
+column degrees of $\mathbf{F}$. 
+\end{thm}
+A column basis of $\mathbf{F}$ is a basis for the $\mathbb{K}\left[x\right]$-module
+\[
+\left\{ \mathbf{F}\mathbf{p}~|~\mathbf{p}\in\mathbb{K}\left[x\right]^{n}~\right\} ~.
+\]
+ Such a basis can be represented as a full rank matrix $\mathbf{T}\in\mathbb{K}\left[x\right]^{m\times r}$
+whose columns are the basis elements. 
+
+
+\subsection{Order bases}
+
+Let $\mathbb{K}$ be a field, $\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$
+a matrix of polynomials and $\vec{\sigma}$ a list non-negative integer. 
+\begin{defn}
+A vector of polynomials $\mathbf{p}\in\mathbb{K}\left[x\right]^{n\times1}$
+has \emph{order} $\left(\mathbf{F},\vec{\sigma}\right)$ (or \emph{order}
+$\vec{\sigma}$ with respect to $\mathbf{F}$) if $\mathbf{F}\cdot\mathbf{p}\equiv\mathbf{0}\mod x^{\vec{\sigma}}$,
+that is, 
+\[
+\mathbf{F}\cdot\mathbf{p}=x^{\vec{\sigma}}\mathbf{r}
+\]
+for some $\mathbf{r}\in\mathbb{K}\left[\left[x\right]\right]^{m\times1}$. 
+
+The set of all order $\left(\mathbf{F},\vec{\sigma}\right)$ vectors
+is a $\mathbb{K}\left[x\right]$-module denoted by $\left\langle \left(\mathbf{F},\vec{\sigma}\right)\right\rangle $. 
+\end{defn}
+Note that the matrix $\mathbf{F}$ can also be a matrix of power series,
+but restricting it to matrix of polynomials is sufficient for practical
+computations, for our purpose in this paper, and for simplicity. Also
+note that the order $\vec{\sigma}$ may not be uniform%
+\begin{comment}
+ as in some other applications of order basis, so the order of different
+rows may be different
+\end{comment}
+.
+
+An \emph{order basis} $\mathbf{P}$ of $\mathbf{F}$ with order $\vec{\sigma}$
+and shift $\vec{s}$, or an $\left(\mathbf{F},\vec{\sigma},\vec{s}\right)$-order
+basis, or simply an $\left(\mathbf{F},\vec{\sigma},\vec{s}\right)$-basis,
+is a polynomial matrix whose columns form a basis for the module $\left\langle \left(\mathbf{F},\vec{\sigma}\right)\right\rangle $
+having minimal $\vec{s}$-column degrees \citep{BeLa94,BL1997}. Again,
+note that a $\vec{s}$-column reduced basis of $\left\langle \left(\mathbf{F},\vec{\sigma}\right)\right\rangle $
+has the minimal $\vec{s}$-column degrees among all bases of $\left\langle \left(\mathbf{F},\vec{\sigma}\right)\right\rangle $.
+\begin{comment}
+\begin{defn}
+A polynomial matrix $\mathbf{P}$ is an order basis of $\mathbf{F}$
+of order $\vec{\sigma}$ and shift $\vec{s}$, denoted by $\left(\mathbf{F},\sigma,\vec{s}\right)$-basis,
+if the following properties hold: 
+\begin{enumerate}
+\item $\mathbf{P}$ is nonsingular and $\vec{s}$-column reduced. 
+\item $\mathbf{P}$ has order $\left(\mathbf{F},\vec{\sigma}\right)$ (or
+equivalently, each column of $\mathbf{P}$ is in $\left\langle (\mathbf{F},\vec{\sigma})\right\rangle $). 
+\item Any $\mathbf{q}\in\left\langle \left(\mathbf{F},\vec{\sigma}\right)\right\rangle $
+can be expressed as a linear combination of the columns of $\mathbf{P}$,
+given by $\mathbf{P}^{-1}\mathbf{q}$. \end{enumerate}
+\end{defn}
+\end{comment}
+
+
+We will need a special case of Theorem 5.1 in \citep{BL1997} which
+for completeness is stated below.
+\begin{thm}
+\label{thm:combineOrderBases} For an input matrix $\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$,
+an order vector $\vec{\sigma}$, and a shift vector $\vec{s}$, if
+$\mathbf{P}$ is a $\left(\mathbf{F},\vec{\sigma},\vec{s}\right)$-basis
+with $\vec{s}$-column degrees $\vec{t}$, and $\mathbf{Q}$ is a
+$(\mathbf{F}\mathbf{P},\vec{\tau},\vec{t})$ -basis with $\vec{t}$-column
+degrees $\vec{u}$, where $\vec{\tau}\ge\vec{\sigma}$ component-wise,
+then $\mathbf{P}\mathbf{Q}$ is a $(\mathbf{F},\vec{\tau},\vec{s})$-basis
+with $\vec{s}$-column degrees $\vec{u}$. 
+\end{thm}
+\begin{comment}
+From \citep{BL1997} we have the following lemma. 
+\begin{lem}
+\label{lem:orderBasisProperty}
+
+\label{lem:orderBasisEquivalence}The following are equivalent for
+a polynomial matrix \textbf{$\mathbf{P}$}: 
+\begin{enumerate}
+\item $\mathbf{P}$ is a $\left(\mathbf{F},\vec{\sigma},\vec{s}\right)$-basis. 
+\item $\mathbf{P}$ is comprised of a set of $n$ minimal $\vec{s}$-degree
+polynomial vectors that are linearly independent and each having order
+$\left(\mathbf{F},\vec{\sigma}\right)$. 
+\item \label{enu:reduced+generator}$\mathbf{P}$ does not contain a zero
+column, has order $\left(\mathbf{F},\vec{\sigma}\right)$, is $\vec{s}$-column
+reduced, and any $\mathbf{q}\in\left\langle \left(\mathbf{F},\vec{\sigma}\right)\right\rangle $
+can be expressed as a linear combination of the columns of $\mathbf{P}$. \end{enumerate}
+\end{lem}
+\end{comment}
+
+
+In this paper we will need the following lemma from \citep{zl2013,zhou:phd2012}
+which shows a left kernel basis of a right kernel basis is contained
+in an order basis of a right kernel basis.
+\begin{lem}
+\label{lem:nullspaceBasisInOrderBasis} For an input matrix $\mathbf{A}\in\mathbb{K}\left[x\right]^{m\times n}$,
+and a shift vector $\vec{s}$, if $\mathbf{N}$ is a $(\mathbf{A},\vec{s})$-kernel
+basis with $\cdeg_{\vec{s}}\mathbf{N}=\vec{b}$ and $\mathbf{P}$
+be a $\left(\mathbf{N}^{T},\vec{b}+1,-\vec{s}\right)$-basis. Partition
+$\mathbf{P}=\left[\mathbf{P}_{1},\mathbf{P}_{2}\right]$ where $\mathbf{P}_{1}$
+consists of all columns $\mathbf{p}$ with $\cdeg_{-\vec{s}~}\mathbf{p}\le0$.
+Then $\mathbf{P}_{1}$ is a $(\mathbf{N}^{T},-\vec{s})$-kernel basis. 
+\end{lem}
+We remark that the condition $\cdeg_{-\vec{s}~}\mathbf{p}\le0$ is
+the same as specifying $\deg p_{i}\leq s_{i}$ for all $i$. %\input{rest}
+
+
+
+\subsection{The existence of unimodular completion}
+
+We know that vectors whose entries are relatively prime can be completed
+to unimodular matrices. We also have a more general criterion on the
+existence of unimodular completion for matrices.
+\begin{lem}
+\label{lem:unimodularCompletionCondition}A unimodular completion
+of $\mathbf{F}$ exists if and only if $\mathbf{F}$ has unimodular
+column bases. \end{lem}
+\begin{proof}
+If $\mathbf{F}$ has a non-unimodular column basis $\mathbf{A}$,
+then $\diag\left(\left[\mathbf{A},I\right]\right)$ is always a factor
+of $\begin{bmatrix}\mathbf{F}\\
+\mathbf{B}
+\end{bmatrix}$ for any polynomial matrix $\mathbf{B}$, implying that the matrix
+$\begin{bmatrix}\mathbf{F}\\
+\mathbf{B}
+\end{bmatrix}$ is non-unimodular. On the other hand, if $\mathbf{F}$ has a unimodular
+column basis, then there exists a unimodular matrix $\mathbf{U}$
+such that $\mathbf{F}\mathbf{U}=\left[I_{m},0\right]$, or $\mathbf{F}=\left[I_{m},0\right]\mathbf{U}^{-1}$
+after rearranging, that is, $\mathbf{F}$ must be consists of the
+top $m$ rows of $\mathbf{U}^{-1}$. The matrix $\mathbf{U}^{-1}$
+is therefore a unimodular completion of the matrix $\mathbf{F}$.
+\end{proof}
+
+\section{Reversing Operations}
+
+Our procedure relies heavily on operations that reverse the order
+of coefficients of polynomial matrices. Reverse operations has been
+used in the past for computing matrix normal forms using order basis
+computations. Here we extend the reverse operations to work with shifted
+degrees. We show how reverse operations can be applied systematically
+to polynomial matrices with certain shifted degrees, and then provide
+some properties of the reverse operations.
+
+For a polynomial $p=p_{0}+p_{1}x+\dots+p_{u}x^{u}\in\mathbb{K}\left[x\right]$
+with degree bounded by $u$, the order of its coefficients can be
+reversed as 
+\[
+\rev(p,u)=p(x^{-1})\cdot x^{u}=p_{u}+p_{u-1}x+\cdots+p_{1}x^{u-1}+p_{0}x^{u}.
+\]
+This can be extended to column vectors and row vectors with shifted
+degrees.
+\begin{defn}
+Let $\vec{u}=\left[u_{1},\dots u_{n}\right]\in\mathbb{Z}^{n}$ be
+a degree shift, and a column vector $\mathbf{a}\in\mathbb{K}\left[x\right]^{n\times1}$
+with $\vec{u}$-column degree bounded by $v$. We define
+\[
+\colRev(\mathbf{a},\vec{u},v)=x^{-\vec{u}}\left(\mathbf{a}(x^{-1})\right)x^{v}=\begin{bmatrix}\rev(p,v-u_{1})\\
+\vdots\\
+\rev(p,v-u_{n})
+\end{bmatrix}.
+\]
+Similarly for a row vector $\mathbf{b}\in\mathbb{K}\left[x\right]^{1\times n}$
+with $\vec{u}$-row degree bounded by $v$, where $\vec{u}=\left[u_{1},\dots u_{n}\right]\in\mathbb{Z}^{n}$
+is a degree shift, we define
+\[
+\rowRev(\mathbf{b},\vec{u},v)=\colRev(\mathbf{b}^{T},\vec{u},v)^{T}=x^{v}\left(\mathbf{b}(x^{-1})\right)x^{-\vec{u}}.
+\]
+\end{defn}
+\begin{exmp}
+If $\mathbf{f}=\left[10+x,5+x+2x^{2}\right]$, $\vec{u}=\left[-1,-2\right]$,
+and $v=0$, then 
+\begin{align*}
+\rowRev(\mathbf{f},\vec{u},v) & =x^{0}\left[10+x^{-1},5+x^{-1}+2x^{-2}\right]\begin{bmatrix}x\\
+ & x^{2}
+\end{bmatrix}\\
+ & =\left[10x+1,5x^{2}+x+2\right]
+\end{align*}
+
+\end{exmp}
+We can extend the reverse operation further to polynomial matrices.
+\begin{defn}
+Let $\vec{u}=\left[u_{1},\dots u_{n}\right]\in\mathbb{Z}^{n}$ be
+a degree shift. Let $\mathbf{A}\in\mathbb{K}\left[x\right]^{n\times k}$
+with $\vec{u}$-column degrees bounded by $\vec{v}=\left[v_{1},\dots,v_{k}\right]\in\mathbb{Z}^{k}$,
+we define 
+\[
+\colRev(\mathbf{A},\vec{u},\vec{v})=x^{-\vec{u}}\left(\mathbf{A}(1/x)\right)x^{\vec{v}}
+\]
+ Similarly, for $\vec{u}\in\mathbb{Z}^{n}$ and $\mathbf{B}\in\mathbb{K}\left[x\right]^{k\times n}$
+with $\vec{u}$-row degrees bounded component-wise by $\vec{v}\in\mathbb{Z}^{k}$,
+\[
+\rowRev(\mathbf{B},\vec{u},\vec{v})=\colRev(\mathbf{B}^{T},\vec{u},\vec{v})^{T}=x^{\vec{v}}\left(\mathbf{B}(1/x)\right)x^{-\vec{u}}.
+\]
+It is not difficult to see that 
+\[
+\rowRev(\mathbf{B},\vec{u},\vec{v})=\colRev(\mathbf{B},-\vec{v},-\vec{u}).
+\]
+
+\end{defn}
+It is useful to note that any degree bound remains the same after
+the reverse operations.
+\begin{lem}
+If $\mathbf{A}\in\mathbb{K}\left[x\right]^{n\times k}$ has $\vec{u}$-column
+degrees bounded by the corresponding entries of $\vec{v}$, then $\colRev(\mathbf{A},\vec{u},\vec{v})$
+also has $\vec{u}$-column degrees bounded by the corresponding entries
+of $\vec{v}$.
+\end{lem}
+As one would expect, applying two reverse operations gives back the
+original input.
+\begin{lem}
+The following equalities holds:%
+\begin{comment}
+\begin{eqnarray*}
+\rev\left(\rev(p,u),u\right) & = & p\\
+\colRev\left(\colRev(\mathbf{a},\vec{u},v),\vec{u},v\right) & = & \mathbf{a}\\
+\rowRev\left(\rowRev(\mathbf{b},\vec{u},v),\vec{u},v\right) & = & \mathbf{b}
+\end{eqnarray*}
+\end{comment}
+\begin{eqnarray*}
+\colRev\left(\colRev(\mathbf{A},\vec{u},\vec{v}),\vec{u},\vec{v}\right) & = & \mathbf{A}\\
+\rowRev\left(\rowRev(\mathbf{B},\vec{u},\vec{v}),\vec{u},\vec{v}\right) & = & \mathbf{B}
+\end{eqnarray*}
+
+\end{lem}
+The following lemmas shows that the commutativity between reverse
+operations and multiplications.
+\begin{lem}
+\label{lem:reverseMatrixProduct}If $\mathbf{A}\in\mathbb{K}\left[x\right]^{m\times n}$
+has $\vec{u}$-column degrees bounded by $\vec{v}$, and $\mathbf{B}\in\mathbb{K}\left[x\right]^{n\times k}$
+has $\vec{v}$-column degrees bounded by $\vec{w}$, then 
+\[
+\colRev(\mathbf{A},\vec{u},\vec{v})\colRev(\mathbf{B},\vec{v},\vec{w})=\colRev(\mathbf{A}\mathbf{B},\vec{u},\vec{w})
+\]
+ has $\vec{u}$-column degrees bounded by $\vec{w}$. 
+\end{lem}
+
+\begin{lem}
+\label{lem:reverseMatrixProduct2}If $\mathbf{A}\in\mathbb{K}\left[x\right]^{m\times n}$
+has $\vec{u}$-row degrees bounded by $\vec{v}$, and $\mathbf{B}\in\mathbb{K}\left[x\right]^{n\times k}$
+has $-\vec{u}$-column degrees bounded by $\vec{w}$, then 
+\[
+\rowRev(\mathbf{A},\vec{u},\vec{v})\colRev(\mathbf{B},-\vec{u},\vec{w})=\colRev(\mathbf{A}\mathbf{B},-\vec{v},\vec{w}).
+\]
+
+\end{lem}
+More details on these reverse operations can be found in \citep{zhou:phd2012}.
+
+There is a natural relationship between a shifted minimal kernel basis
+and the reverse operation.
+\begin{lem}
+\label{lem:reverseNullspaceBasis} Let $\vec{u}\in\mathbb{Z}^{n}$
+and $\mathbf{A}\in\mathbb{K}\left[x\right]^{m\times n}$ with $(-\vec{u})$-row
+degrees bounded by $\vec{a}$. If $\mathbf{A}^{r}=\rowRev\left(\mathbf{A},-\vec{u},\vec{a}\right)$
+then a matrix $\mathbf{N}\in\mathbb{K}\left[x\right]^{n\times k}$with
+$\vec{u}$-column degrees $\vec{b}$ is a $(\mathbf{A},\vec{u})$-kernel
+basis if and only if $\mathbf{N}^{c}=\colRev\left(\mathbf{N},\vec{u},\vec{b}\right)$
+is a $(\mathbf{A}^{r},\vec{u})$-kernel basis \end{lem}
+\begin{proof}
+If $\mathbf{N}$ is a kernel basis of $\mathbf{A}$, then 
+\begin{eqnarray*}
+\mathbf{A}^{r}\cdot\mathbf{N}^{c} & = & (x^{\vec{a}}\mathbf{A}(x^{-1})x^{\vec{u}})\cdot(x^{-\vec{u}}\mathbf{N}(x^{-1})x^{\vec{b}})\\
+ & = & x^{\vec{a}}\cdot\mathbf{A}(x^{-1})\cdot\mathbf{N}(x^{-1})\cdot x^{\vec{b}}=0
+\end{eqnarray*}
+and so $\mathbf{N}^{c}$ is a kernel basis of $\mathbf{A}^{r}$. It
+remains to show minimality. Suppose $\mathbf{N}^{c}$ is not $\vec{u}$-minimal
+and we have another kernel basis $\mathbf{M}$ of $\mathbf{A}^{r}$
+with $\vec{u}$-column degrees $\vec{c}$ that has some entry lower
+than the corresponding entry in $\vec{b}$. Then $\mathbf{M}^{c}=\colRev\left(\mathbf{M},\vec{u},\vec{c}\right)$
+is also a kernel of $\mathbf{A}$ with lower $\vec{u}$-column degrees
+than $\vec{b}$, contradicting the $\vec{u}$-minimality of $\mathbf{N}$. 
+\end{proof}
+
+\section{Unimodular completion}
+
+In this section, we look at how a unimodular completion can be done
+using a combination of kernel basis computations, order basis computations,
+and reverse operations.
+
+\begin{comment}
+Let us look informally to see how all these operations enter into
+the unimodular completion problem. Recall from equation (\ref{one})
+that if $\mathbf{U}$ is a unimodular matrix such that $\mathbf{F}\cdot\mathbf{U}=[I_{m},0]$
+then the inverse $\mathbf{V}$ is a unimodular completion with $\mathbf{F}$
+being its top $m$ rows. Suppose now that $\mathbf{\hat{V}}$ denotes
+the bottom $n-m$ rows of $\mathbf{V}$ and that $\mathbf{\hat{U}}$
+denote the last $n-m$ columns of $\mathbf{U}$. Then 
+\begin{equation}
+\mathbf{F}\cdot\mathbf{\hat{U}}=0~~~\mbox{ and }~~~\mathbf{\hat{V}}\cdot\mathbf{\hat{U}}=I_{n-m}.\label{two}
+\end{equation}
+In particular $\mathbf{\hat{U}}$ is a kernel basis for $\mathbf{F}$.
+For the second equation it is helpful to consider reversing coefficients
+since in this case one obtains part of an order basis. That is, if
+\begin{equation}
+\mathbf{F}^{r}=\rowRev(\mathbf{F},-\vec{s},0),~~~\mathbf{\hat{V}}^{r}=\rowRev(\mathbf{\hat{V}},-\vec{v},0)~~~\mbox{ and }~~~\mathbf{\hat{U}}^{c}=\colRev(\mathbf{\hat{U}},-\vec{v},0)\label{four}
+\end{equation}
+then 
+\begin{equation}
+\mathbf{F}^{r}\cdot\mathbf{\hat{U}}^{c}=0~~~\mbox{ and }~~~\mathbf{\hat{V}}^{r}\cdot\mathbf{\hat{U}}^{c}=x^{\vec{u}+\vec{v}}.\label{three}
+\end{equation}
+Thus, we now have that $\mathbf{\hat{U}}^{c}$ is a kernel basis for
+$\mathbf{F}^{r}$ and, taking tranposes of the rightmost equation
+in (\ref{three}), we see that the transpose of the desired completion
+$\mathbf{\hat{V}}^{r}$ is a set of $n-m$ columns of an order basis
+for the transpose of $\mathbf{\hat{U}}^{c}$.
+
+Working more formally, we need to be more specific about have the
+matrix polynomials have their coefficients reversed (i.e. how to specify
+$\vec{s}$, $\vec{u}$ and $\vec{v}$ in equation (\ref{four})) along
+with details on locating the specific $n-m$ columns of an order basis. 
+\end{comment}
+We will show in \prettyref{lem:reverseOrderBasisToUnimodular} a close
+relationship between order bases and unimodular matrices, namely,
+suitable reverse operations can be applied to order bases to obtain
+unimodular matrices. This suggests that the problem of finding a unimodular
+completion of $\mathbf{F}$ is equivalent to finding some order basis
+that contains a reversed $\mathbf{F}$. In addition, \prettyref{lem:nullspaceBasisInOrderBasis}
+shows how a kernel basis can be embedded in an order basis, that is,
+if we can make the reversed $\mathbf{F}$ a kernel basis of some matrix
+$\mathbf{M}$, then there is an order basis of $\mathbf{M}$ that
+contains the reversed $\mathbf{F}$. A natural choice for $\mathbf{M}$
+is a kernel basis of the reversed $\mathbf{F}$. We actually have
+two choices here. We can either reverse the coefficients of $\mathbf{F}$,
+as we do in \prettyref{thm:unimodularComputation}, or we can reverse
+the coefficients of a kernel basis of $\mathbf{F}$. 
+
+First let us look at how an order basis can lead to a unimodular matrix. 
+\begin{lem}
+\label{lem:reverseOrderBasisToUnimodular} Let $\vec{u}\in\mathbb{Z}^{n}$
+%=\left[u_{1},\dots u_{n}\right]\in\mathbb{Z}^{n}$
+be a degree shift and $\mathbf{P}$ a $\left(\mathbf{A},\sigma,\vec{u}\right)$-basis
+with $\cdeg_{\vec{u}}\mathbf{P}=\vec{v}$. %=\left[v_{1},\dots,v_{k}\right]$. 
+Then $\mathbf{P}^{c}=\colRev(\mathbf{P},\vec{u},\vec{v})$ is unimodular. 
+\end{lem}
+%From the definition of $\mathbf{P}^c$ we see that we need only show that 
+
+\begin{proof}
+Note first that the identity matrix is a $\left(\mathbf{A},0,\vec{u}\right)$-basis,
+which has $\vec{u}$-column degrees $\vec{u}$ and determinant $1$.
+An $\left(\mathbf{A},\sigma,\vec{u}\right)$-basis $\mathbf{Q}$ can
+then be constructed iteratively using the algorithms from \citep{BeLa94,Giorgi2003},
+which only increase the $\vec{u}$-column degrees of the basis by
+multiplying some columns by $x$ each time. As the $\vec{u}$-column
+degrees of the basis are increased from $\vec{u}$ to $\vec{v}$,
+its determinant of $\mathbf{Q}$ therefore increased from 1 to $x^{\sum\vec{v}-\sum\vec{u}}$.
+Since any two $\left(\mathbf{A},\sigma,\vec{u}\right)$-bases are
+unimodularly equivalent, we get 
+\[
+\det\left(\mathbf{P}\right)=\det\left(\mathbf{Q}\mathbf{U}\right)=c\cdot x^{\sum\vec{v}-\sum\vec{u}}.
+\]
+
+
+Hence 
+\begin{eqnarray*}
+\det\left(\mathbf{P}^{c}\right) & = & \det\left(x^{-\vec{u}}\left(\mathbf{P}(x^{-1})\right)x^{\vec{v}}\right)\\
+ & = & x^{-\sum\vec{u}}\cdot\det\left(\mathbf{P}(x^{-1})\right)\cdot x^{\sum\vec{v}}\\
+ & = & c\cdot x^{\sum\vec{v}}\cdot x^{-\sum\vec{v}+\sum\vec{u}}\cdot x^{-\sum\vec{u}}=c
+\end{eqnarray*}
+and $\mathbf{P}^{c}$ is unimodular. 
+\end{proof}
+The following lemma shows the unimodular equivalence between any matrix
+$\mathbf{A}$ that has a unimodular column basis, and a left kernel
+basis of any right kernel basis of $\mathbf{A}$. This is needed later
+in \prettyref{thm:unimodularComputation} to replace of $\mathbf{F}$
+with a kernel basis that can be embedded in a unimodular matrix. 
+\begin{lem}
+\label{lem:unimodularEquivalenceNullspaceBasisOfNullspaceBasis} Let
+$\mathbf{A}\in\mathbb{K}\left[x\right]^{m\times n}$ have a unimodular
+column basis and $\mathbf{N}\in\mathbb{K}\left[x\right]^{n\times\left(n-m\right)}$
+be a right kernel basis of $\mathbf{A}$. If $\mathbf{B}$ is a left
+kernel basis of $\mathbf{N}$ then $\mathbf{A}=\mathbf{U}\mathbf{B}$
+for a unimodular matrix $\mathbf{U}$. \end{lem}
+\begin{proof}
+This follows from \citep[Lemma 3.3]{zl2013} which tells us that if
+$\mathbf{U}$ is a column basis of $\mathbf{A}$ then $\mathbf{A}=\mathbf{U}\mathbf{B}$. 
+\end{proof}
+We are now ready to state a key result that allows a unimodular completion
+to be computed for a given input matrix $\mathbf{F}$. Basically,
+we compute a kernel basis of a reversed $\mathbf{F}$, then an order
+basis of the kernel basis can be reversed to provide a uniomodular
+completion of $\mathbf{F}$.
+\begin{thm}
+\label{thm:unimodularComputation} Let $\mathbf{F}^{r}=\rowRev\left(\mathbf{F},-\vec{u},0\right)$
+and $\mathbf{M}$ be a $(\mathbf{F}^{r},\vec{u})$-kernel basis with
+shifted column $\cdeg_{\vec{u}}\mathbf{M}=\vec{b}$. Let $\mathbf{P}=\left[\mathbf{P}_{1},\mathbf{P}_{2}\right]$
+be a $\left(\mathbf{M}^{T},\vec{b}+1,-\vec{u}\right)$-basis, where
+$\mathbf{P}_{1}$ consists of all columns $\mathbf{p}$ with $\cdeg_{-\vec{u}}\mathbf{p}\le0$.
+If $\mathbf{P}_{2}^{r}=\colRev\left(\mathbf{P}_{2},-\vec{u},\cdeg_{-\vec{u}}\mathbf{P}_{2}\right)$,
+then $\left[\begin{array}{c}
+\mathbf{F}\\
+{\mathbf{P}_{2}^{r}}^{T}
+\end{array}\right]$ is a unimodular completion of $\mathbf{F}$. \end{thm}
+\begin{proof}
+Let $\mathbf{P}_{1}^{r}=\colRev\left(\mathbf{P}_{1},-\vec{u},\vec{v}\right)$
+where $\vec{v}=\cdeg_{-\vec{u}}\mathbf{P}_{1}$ is the shifted degree
+of $\mathbf{P}_{1}$. We know from \prettyref{lem:reverseOrderBasisToUnimodular}
+that $\left[\mathbf{P}_{1}^{r},\mathbf{P}_{2}^{r}\right]$ is unimodular.
+Let $\mathbf{M}^{r}=\colRev\left(\mathbf{M},\vec{u},\vec{b}\right)$.
+Then from \prettyref{lem:reverseNullspaceBasis} we know $\mathbf{M}^{r}$
+is a $\left(\mathbf{F},\vec{s}\right)$-kernel basis and $\mathbf{P}_{1}^{r}$
+is a $\left(\left(\mathbf{M}^{r}\right)^{T},-\vec{u}\right)$-kernel
+basis. Hence, by \prettyref{lem:unimodularEquivalenceNullspaceBasisOfNullspaceBasis},
+$\mathbf{F}=\mathbf{U}\left(\mathbf{P}_{1}^{r}\right)^{T}$ for some
+unimodular matrix $\mathbf{U}$. Therefore 
+\[
+\left[\begin{array}{c}
+\mathbf{F}\\
+{\mathbf{P}_{2}^{r}}^{T}
+\end{array}\right]=\left[\begin{array}{cc}
+\mathbf{U} & 0\\
+0 & I
+\end{array}\right]\cdot\left[\begin{array}{c}
+{\mathbf{P}_{1}^{r}}^{T}\\
+{\mathbf{P}_{2}^{r}}^{T}
+\end{array}\right]
+\]
+a product of two unimodular matrices and hence is itself unimodular. 
+\end{proof}
+\prettyref{thm:unimodularComputation} provides a way to correctly
+compute a unimodular completion of $\mathbf{F}$. To improve the computational
+efficiency, it is helpful to separate the rows of $\mathbf{M}^{T}$
+and just work with one subset of rows at a time. This is possible
+by the following lemma.
+\begin{lem}
+\label{lem:unimodularComputationByRows} Let $\mathbf{F}^{r}=\rowRev\left(\mathbf{F},-\vec{u},0\right)$
+and let $\mathbf{M}$ be a $(\mathbf{F}^{r},\vec{u})$-kernel basis
+with $\cdeg_{\vec{u}}\mathbf{M}=\vec{b}$ and partitioned as $\mathbf{M}=\left[\mathbf{M}_{1},\mathbf{M}_{2}\right]$.
+Let $\mathbf{P}_{1}$ be a $\left(\mathbf{M}_{1}^{T},\cdeg_{\vec{u}}\mathbf{M}_{1}+1,-\vec{u}\right)$-basis
+and be partitioned as $\mathbf{P}_{1}=\left[\mathbf{N}_{1},\mathbf{Q}_{1}\right]$,
+where $\mathbf{N}_{1}$ consists of all columns $\mathbf{p}$ of $\mathbf{P}_{1}$
+with $\cdeg_{-\vec{u}}\mathbf{p}\le0$. Let $\vec{t}=\cdeg_{-\vec{u}}\mathbf{N}_{1}$
+and $\mathbf{P}_{2}$ be a $\left(\mathbf{M}_{2}^{T}\mathbf{N}_{1},\cdeg_{\vec{u}}\mathbf{M}_{2}+1,\vec{t}\right)$-basis
+and be partitioned as $\mathbf{P}_{2}=\left[\mathbf{N}_{2},\mathbf{Q}_{2}\right]$,
+where $\mathbf{N}_{2}$ consists of all columns $\mathbf{p}$ of $\mathbf{P}_{2}$
+with $\cdeg_{-\vec{t}}\mathbf{p}\le0$. Let $\mathbf{R}=\left[\mathbf{N}_{1}\mathbf{Q}_{2},\mathbf{Q}_{1}\right]$
+and $\mathbf{R}^{r}=\colRev\left(\mathbf{R},-\vec{u},\cdeg_{-\vec{u}}\mathbf{R}\right)$.
+Then $\left[\begin{array}{c}
+\mathbf{F}\\
+{\mathbf{R}^{r}}^{T}
+\end{array}\right]$ is a unimodular completion of $\mathbf{F}$. \end{lem}
+\begin{proof}
+Let $\mathbf{P}_{1}^{r}=\colRev\left(\mathbf{P}_{1},-\vec{s},\cdeg_{-\vec{s}}\mathbf{P}_{1}\right)$
+and $\mathbf{P}_{2}^{r}=\colRev\left(\mathbf{P}_{2},\vec{t},\cdeg_{\vec{t}}\mathbf{P}_{2}\right)$.
+From \prettyref{lem:reverseOrderBasisToUnimodular} we have that both
+$\mathbf{P}_{1}^{r}$ and $\mathbf{P}_{2}^{r}$ are unimodular and
+hence 
+\[
+\mathbf{P}_{1}^{r}\cdot\diag\left(\left[\mathbf{P}_{2}^{r},I\right]\right)=\left[\mathbf{N}_{1}^{r}\mathbf{N}_{2}^{r},\mathbf{N}_{1}^{r}\mathbf{Q}_{2}^{r},\mathbf{Q}_{1}\right]=\left[\mathbf{N}_{1}^{r}\mathbf{N}_{2}^{r},\mathbf{R}^{r}\right]
+\]
+is unimodular, where\textbf{ $\mathbf{N}_{1}\mathbf{N}_{2}$ }is a
+kernel basis of $\mathbf{M}$. The result follows by the same reasoning
+as in the proof of \prettyref{thm:unimodularComputation}. 
+\end{proof}
+
+\section{Efficient Computation}
+
+\prettyref{lem:unimodularComputationByRows} provides a way to correctly
+compute a unimodular completion of $\mathbf{F}$. Our next task is
+to make sure it can be computed efficiently and analyze its computational
+cost. We already know that a $(\mathbf{F}^{r},\vec{s})$-kernel basis
+can be computed with a cost of $O^{\sim}\left(n^{\omega}s\right)$.
+Therefore, it only remains to check the cost of the order basis computations.
+Note that the non-uniform order makes our problem here a little more
+difficult. However, the output basis has its $-\vec{s}$-column degrees
+bounded by $1$, which is a consequence of the fact $\mathbf{M}$
+is a $\vec{s}$-minimal kernel basis, as shown in \prettyref{lem:nullspaceOrderbasisDegree}
+below. But we first need a few general lemmas on the degree bounds
+of order bases and kernel bases.
+
+First, the following lemma is a simple extension of Lemma 3.2 in \citet{za2012}
+for dealing with nonuniform orders. 
+\begin{lem}
+\label{lem:boundOfSumOfShiftedDegreesOfOrderBasisWithNonuniformOrder}
+Given $\mathbf{A}\in\mathbb{K}^{m\times n}[x]$, a shift $\vec{u}\in\mathbb{Z}^{n}$,
+and an order list $\vec{\sigma}\in\mathbb{Z}^{m}$, let $\vec{v}$
+be the $\vec{u}$-column degrees of a $\left(\mathbf{A},\vec{\sigma},\vec{u}\right)$-basis.
+Then 
+\[
+\sum\vec{v}~\le~\sum\vec{u}+\sum\vec{\sigma}.
+\]
+\end{lem}
+\begin{proof}
+The sum of the $\vec{u}$-column degrees is $\sum\vec{u}$ at order
+$0$, since the identity matrix is a $\left(\mathbf{A},0,\vec{u}\right)$-basis.
+This sum increases by $1$ for each order increase of each row. The
+total number of order increases required for all rows is at most $\sum\vec{\sigma}$.
+Note that from \prettyref{thm:combineOrderBases}, we can work with
+just one row at a time to increase its order in the order basis computation. 
+\end{proof}
+The following lemma extends \prettyref{thm:boundOfSumOfShiftedDegreesOfKernelBasis}
+to give a bound based on the shifted column degrees or shifted row
+degrees, instead of just the column degrees of the input matrix. 
+\begin{lem}
+\label{lem:generaKernelBasisDegreeBound}If $\mathbf{A}\in\mathbb{K}^{m\times n}[x]$
+has $\rdeg_{\vec{u}}\mathbf{A}\le\vec{v}$ or equivalently $\cdeg_{-\vec{v}}\mathbf{A}\le-\vec{u}$,
+then any $(\mathbf{A},-\vec{u})$-kernel basis $\mathbf{B}$ satisfies
+\[
+\sum\cdeg_{-\vec{u}}\mathbf{B}\le\sum\vec{v}-\sum\vec{u}.
+\]
+\end{lem}
+\begin{proof}
+Let $\mathbf{P}=\left[\mathbf{B},\bar{\mathbf{B}}\right]$ be a $\left(\mathbf{A},\vec{v}+\sigma,-\vec{u}\right)$-basis
+containing a kernel basis, $\mathbf{B}$, of $\mathbf{A}$. Then 
+\begin{equation}
+\sum\cdeg_{-\vec{u}}\mathbf{P}\le m\sigma+\sum\vec{v}-\sum\vec{u}.\label{eq:orderBasisDegreeBound}
+\end{equation}
+ by \prettyref{lem:boundOfSumOfShiftedDegreesOfOrderBasisWithNonuniformOrder}
+\begin{comment}
+This is because we can iteratively construct an $\left(\mathbf{A},\vec{v}+\sigma,-\vec{u}\right)$-basis
+from the identity matrix, a $\left(\mathbf{A},0,-\vec{u}\right)$-basis
+with $-\vec{u}$-column degrees $-\vec{u}$, by using at most 1 degree
+increase for each increase in the order $\vec{v}+\sigma$. Then $\sum\cdeg_{-\vec{u}}\mathbf{P}$
+is increased by at most $m\sigma+\sum\vec{v}$ from $-\sum\vec{u}$.
+\end{comment}
+
+
+We also know that 
+\[
+\sum\cdeg_{-\vec{u}}\bar{\mathbf{B}}\ge\sum\cdeg_{-\vec{v}}\mathbf{A}\bar{\mathbf{B}}
+\]
+ by \prettyref{lem:productDegreeBound}. In addition, we know 
+\[
+\cdeg\mathbf{A}\bar{\mathbf{B}}\ge\vec{v}+\sigma
+\]
+ since $\bar{\mathbf{B}}$ has order $\left(\mathbf{A},\vec{v}+\sigma\right)$,
+implying 
+\[
+\sum\cdeg_{-\vec{v}}\mathbf{A}\bar{\mathbf{B}}\ge m\sigma.
+\]
+ Therefore, 
+\begin{equation}
+\sum\cdeg_{-\vec{u}}\bar{\mathbf{B}}\ge m\sigma.\label{eq:nonkernelBasisDegreeBound}
+\end{equation}
+
+
+Combining \prettyref{eq:orderBasisDegreeBound} and \prettyref{eq:nonkernelBasisDegreeBound},
+It follows that 
+\begin{align*}
+\sum\cdeg_{-\vec{u}}\mathbf{B}= & \sum\cdeg_{-\vec{u}}\mathbf{P}-\sum\cdeg_{-\vec{u}}\bar{\mathbf{B}}\le\sum\vec{v}-\sum\vec{u}.
+\end{align*}
+
+\end{proof}
+One can verify that \prettyref{lem:generaKernelBasisDegreeBound}
+specializes to \prettyref{thm:boundOfSumOfShiftedDegreesOfKernelBasis}
+when $\vec{v}=0$.
+
+When the matrix $\mathbf{A}$ is also a $\left(\mathbf{B}^{T},\vec{u}\right)$-kernel
+basis, as in our case, the bound in fact becomes tight. 
+\begin{lem}
+\label{lem:mutualMinimalNullspaceBasisDegrees}Let $\mathbf{A}\in\mathbb{K}^{m\times n}[x]$
+and $\mathbf{B}\in\mathbb{K}^{n\times(n-m)}\left[x\right]$. If $\mathbf{B}$
+is a $(\mathbf{A},-\vec{u})$-kernel basis with $\cdeg_{-\vec{u}}\mathbf{B}=\vec{w}$
+and $\mathbf{A}^{T}$ is a $\left(\mathbf{B}^{T},\vec{u}\right)$-kernel
+basis with $\rdeg_{\vec{u}}\mathbf{A}=\vec{v}$, then 
+\[
+\sum\vec{w}=\sum\vec{v}-\sum\vec{u}.
+\]
+\end{lem}
+\begin{proof}
+This follows from \prettyref{lem:generaKernelBasisDegreeBound}, which
+gives 
+\[
+\sum\vec{w}\le\sum\vec{v}-\sum\vec{u}
+\]
+ and also 
+\[
+\sum\vec{v}\le\sum\vec{w}+\sum\vec{u}
+\]
+ in the reverse direction. 
+\end{proof}
+From \prettyref{lem:nullspaceBasisInOrderBasis}, we know that any
+$\left(\mathbf{M}^{T},\vec{b}+1,-\vec{s}\right)$-basis contains a
+$\left(\mathbf{M}^{T},-\vec{s}\right)$-kernel basis whose $-\vec{s}$-column
+degrees bounded by 0. The following lemma shows that the remaining
+part of the $\left(\mathbf{M}^{T},\vec{b}+1,-\vec{s}\right)$-basis
+has degrees bounded by 1. 
+\begin{lem}
+\label{lem:nullspaceOrderbasisDegree}Let $\mathbf{F}^{r}=\rowRev\left(\mathbf{F},-\vec{s},0\right)$
+and $\mathbf{M}$ be a $(\mathbf{F}^{r},\vec{s})$-kernel basis with
+$\cdeg_{\vec{s}}\mathbf{M}=\vec{b}$. Let $\mathbf{P}$ be a $\left(\mathbf{M}^{T},\vec{b}+1,-\vec{s}\right)$-basis.
+Partition $\mathbf{P}=\left[\mathbf{P}_{1},\mathbf{P}_{2}\right]$
+where $\mathbf{P}_{1}$ consists of all columns $\mathbf{p}$ with
+$\cdeg_{-\vec{s}~}\mathbf{p}\le0$. Then $\cdeg_{-\vec{b}-1}\mathbf{M}^{T}\mathbf{P}_{2}=0$
+and $\cdeg_{-\vec{s}}\mathbf{P}_{2}=1$.\end{lem}
+\begin{proof}
+We already know that $\mathbf{P}$ contains a $\left(\mathbf{M}^{T},-\vec{s}\right)$-kernel
+basis $\mathbf{P}_{1}$. We know that 
+\[
+\sum\cdeg_{-\vec{s}}\mathbf{P}=-\sum\vec{s}+\sum\vec{b}+n-m
+\]
+ as in the proof of \prettyref{lem:generaKernelBasisDegreeBound}
+and for the kernel basis $\mathbf{P}_{1}$ in $\mathbf{P}$, we know
+\[
+\sum\cdeg_{-\vec{s}}\mathbf{P}_{1}=\sum\vec{b}-\sum\vec{s}
+\]
+ from \prettyref{lem:mutualMinimalNullspaceBasisDegrees}. Therefore,
+$\sum\cdeg_{-\vec{s}}\mathbf{P}_{2}=n-m$. From \prettyref{lem:productDegreeBound},
+it follows that 
+\[
+\sum\cdeg_{-\vec{b}}\mathbf{M}^{T}\mathbf{P}_{2}\le\sum\cdeg_{-\vec{s}}\mathbf{P}_{2}=n-m,
+\]
+ or equivalently, 
+\[
+\sum\cdeg_{-\vec{b}-1}\mathbf{M}^{T}\mathbf{P}_{2}\le0.
+\]
+ But since $\mathbf{P}_{2}$ is nonzero and has order $\left(\mathbf{F},\vec{b}+1\right)$,
+we have 
+\[
+\sum\cdeg_{-\vec{b}-1}\mathbf{M}^{T}\mathbf{P}_{2}\ge0.
+\]
+ It follows that 
+\[
+\sum\cdeg_{-\vec{b}-1}\mathbf{M}^{T}\mathbf{P}_{2}=0.
+\]
+ hence $\cdeg_{-\vec{b}-1}\mathbf{M}^{T}\mathbf{P}_{2}=0$ or $\cdeg_{-\vec{b}}\mathbf{M}^{T}\mathbf{P}_{2}=1$.
+Combining this with 
+\[
+\sum\cdeg_{-\vec{b}}\mathbf{M}^{T}\mathbf{P}_{2}\le\sum\cdeg_{-\vec{s}}\mathbf{P}_{2}=n-m
+\]
+ we then get $\cdeg_{-\vec{s}}\mathbf{P}_{2}=1.$
+\end{proof}
+We are now ready to look at the algorithm for computing a $\left(\mathbf{M}^{T},\vec{b}+1,-\vec{s}\right)$-basis,
+given in Algorithm \prettyref{alg:unimodularCompletion}. The situation
+here is similar to the situation in computing a left kernel basis
+in the column basis computation from \citep{zl2013}. That is, the
+order $\vec{b}+1$, or equivalently, the $\vec{s}$-row degrees of
+$\mathbf{M}^{T}$ may be unbalanced and can have degree as large as
+$\sum\vec{s}$. We therefore follow the same process as in the computation
+of column bases \citet{zl2013}. 
+
+\begin{comment}
+If $k$ is the column dimension of $\mathbf{M}$ and $\xi$ is an
+upper bound of $\sum\vec{s}$, then 
+\[
+\sum\cdeg_{\vec{s}}\mathbf{M}=\sum\vec{b}\le\sum\vec{s}\le\xi
+\]
+by \prettyref{thm:boundOfSumOfShiftedDegreesOfKernelBasis}, hence
+at most $\frac{k}{c}$ columns of $\mathbf{M}$ have $\vec{s}$-column
+degrees greater than or equal to $\frac{c~\xi}{k}$ for any $c\ge1$.
+\end{comment}
+{} We assume without loss of generality that the rows of $\mathbf{M}^{T}$
+are arranged in decreasing $\vec{s}$-row degrees and divide $\mathbf{M}^{T}$
+into $\left\lceil \log k\right\rceil $ row blocks according to the
+$\vec{s}$-row degrees of its rows. Let 
+\[
+\mathbf{M}^{T}=\left[\mathbf{M}_{1}^{T},\mathbf{M}_{2}^{T},\cdots,\mathbf{M}_{\left\lceil \log k\right\rceil -1}^{T},\mathbf{M}_{\left\lceil \log k\right\rceil }^{T}\right]
+\]
+with $\mathbf{M}_{\log k},\mathbf{M}_{\log k-1},\cdots,\mathbf{M}_{2},\mathbf{M}_{1}$
+having $\vec{s}$-row degrees in the range 
+\[
+\left[0,2\xi/k\right],\ (2\xi/k,4\xi/k],\ (4\xi/k,8\xi/k],\ ...,\ (\xi/4,\xi/2],\ (\xi/2,\xi]
+\]
+ respectively. Let $\sigma_{i}=\left\lceil \xi/2^{i-1}\right\rceil +1$
+and $\vec{\sigma}_{i}=\left[\sigma_{i},\dots,\sigma_{i}\right]$ with
+the same dimension as the row dimension of $\mathbf{M}_{i}$, and
+\[
+\vec{\sigma}=\left[\vec{\sigma}_{\left\lceil \log k\right\rceil },\vec{\sigma}_{\left\lceil \log k\right\rceil -1},\dots,\vec{\sigma}_{1}\right]
+\]
+ be the order in the order basis computation. For simplicity, instead
+of using $\mathbf{M}^{T}$ as the input matrix, we use 
+\begin{eqnarray*}
+\hat{\mathbf{M}} & =\begin{bmatrix}\hat{\mathbf{M}}_{1}\\
+\vdots\\
+\hat{\mathbf{M}}_{\left\lceil \log k\right\rceil }
+\end{bmatrix}= & x^{\vec{\sigma}-\vec{b}-1}\begin{bmatrix}\mathbf{M}_{1}\\
+\vdots\\
+\mathbf{M}_{\left\lceil \log k\right\rceil }
+\end{bmatrix}=x^{\vec{\sigma}-\vec{b}-1}\mathbf{M}
+\end{eqnarray*}
+instead, so that the order of our problem in each block is uniform
+and a $\left(\hat{\mathbf{M}},\vec{\sigma},-\vec{s}\right)$-basis
+is a $\left(\mathbf{M},\vec{b}+1,-\vec{s}\right)$-basis.
+
+% missing paert removed
+
+
+We now do a series of order basis computations in order to compute
+a unimodular completion of $\mathbf{F}$ based on \prettyref{lem:unimodularComputationByRows}.
+\begin{enumerate}
+\item Let $\vec{s}_{1}=\vec{s}$. First we compute an $\left(\hat{\mathbf{M}}_{1},\vec{\sigma}_{1},-\vec{s}_{1}\right)$-order
+basis using Algorithm 2 of \citet{ZL2012}, which can be done with
+a cost of $O^{\sim}\left(n^{\omega}s\right)$, where $s=\xi/n$. Partition
+$\mathbf{P}_{1}=\left[\mathbf{N}_{1},\mathbf{Q}_{1}\right]$, where
+$\mathbf{N}_{1}$ is a $\left(\hat{\mathbf{M}}_{1},-\vec{s}_{1}\right)$-kernel
+basis. Set $\tilde{\mathbf{N}}_{1}=\mathbf{N}_{1}$ and $\vec{s}_{2}=-\cdeg_{-\vec{s}}\mathbf{N}_{1}$. 
+\item Compute an $\left(\hat{\mathbf{M}}_{2}\tilde{\mathbf{N}}_{1},\vec{\sigma}_{2},-\vec{s}_{2}\right)$-order
+basis and partition $\mathbf{P}_{2}=\left[\mathbf{N}_{2},\mathbf{Q}_{2}\right]$
+with $\mathbf{N}_{2}$ a $\left(\hat{\mathbf{M}}_{2},-\vec{s}_{2}\right)$-kernel
+basis. Set $\vec{s}_{3}=-\cdeg_{-\vec{s}_{2}}\mathbf{N}_{2}$ and
+$\tilde{\mathbf{N}}_{2}=\tilde{\mathbf{N}}_{1}\mathbf{N}_{2}.$
+\item Continue this process, an $\left(\hat{\mathbf{M}}_{i}\tilde{\mathbf{N}}_{i-1},\vec{\sigma}_{i},-\vec{s}_{i}\right)$-order
+basis $\mathbf{P}_{i}$ is computed at step $i$. Partition $\mathbf{P}_{i}=\left[\mathbf{N}_{i},\mathbf{Q}_{i}\right]$
+with $\mathbf{N}_{i}$ an $\left(\hat{\mathbf{M}}_{i}\tilde{\mathbf{N}}_{i-1},-\vec{s}_{i}\right)$-kernel
+basis. Set 
+\[
+\tilde{\mathbf{N}}_{i}=\prod_{j=1}^{i}\mathbf{N}_{i}=\tilde{\mathbf{N}}_{i-1}\mathbf{N}_{i}.
+\]
+ Note that $\tilde{\mathbf{N}}_{\left\lceil \log k\right\rceil }$
+is a $\left(\mathbf{M},-\vec{s}\right)$-kernel basis. 
+\item Let $\mathbf{R}=$ 
+\[
+\left[\mathbf{Q}_{1},\tilde{\mathbf{N}}_{1}\mathbf{Q}_{2},\dots,\tilde{\mathbf{N}}_{\left\lceil \log k\right\rceil -2}\mathbf{Q}_{\left\lceil \log k\right\rceil -1},\tilde{\mathbf{N}}_{\left\lceil \log k\right\rceil -1}\mathbf{Q}_{\left\lceil \log k\right\rceil }\right],
+\]
+and $\mathbf{R}^{r}=\colRev\left(\mathbf{R},-\vec{s},\cdeg_{-\vec{s}}\mathbf{R}\right)$.
+Then from \prettyref{lem:unimodularComputationByRows} we can conclude
+that $\left[\mathbf{F}^{T},\mathbf{R}^{r}\right]$ is a unimodular
+matrix.
+\end{enumerate}
+\begin{algorithm}[t]
+\caption{$\unimodularCompletion(\mathbf{F})$}
+\label{alg:unimodularCompletion}
+
+\begin{algorithmic}[1]
+\REQUIRE{$\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$ with full row
+rank; $\vec{s}$ is initially set to the column degrees of $\mathbf{F}$.
+It keeps track of the degrees.}
+
+\ENSURE{$\mathbf{G}\in\mathbb{K}\left[x\right]^{\left(n-m\right)\times n}$
+such that $\begin{bmatrix}\mathbf{F}\\
+\mathbf{G}
+\end{bmatrix}$ is unimodular.}
+
+\STATE{$\vec{s}:=\cdeg\mathbf{F}$;}
+
+\STATE{$\mathbf{F}^{r}:=\rowRev\left(\mathbf{F},-\vec{s},0\right)$;}
+
+\STATE{$\mathbf{M}:=\mnb(\mathbf{F}^{r},\vec{s})$; $\vec{b}:=\cdeg_{\vec{s}}\mathbf{M}$;
+$k:=n-m;$}
+
+\STATE{\textbf{$\left[\mathbf{M}_{1}^{T},\mathbf{M}_{2}^{T},\cdots,\mathbf{M}_{\left\lceil \log k\right\rceil -1}^{T},\mathbf{M}_{\left\lceil \log k\right\rceil }^{T}\right]:=\mathbf{M}$},
+with $\mathbf{M}_{\left\lceil \log k\right\rceil },\mathbf{M}_{\left\lceil \log k\right\rceil -1},\cdots,\mathbf{M}_{2},\mathbf{M}_{1}$
+having $\vec{s}$-row degrees in the range $\left[0,2\xi/k\right],(2\xi/k,4\xi/k],...,(\xi/4,\xi/2],(\xi/2,\xi].$\textbf{ }}
+
+\FOR{$i$ \textbf{from $1$ to $\left\lceil \log k\right\rceil $ }} 
+
+\forbody{\STATE{$\vec{\sigma}_{i}:=\left[\xi/2^{i-1}+1,\dots,\xi/2^{i-1}+1\right]$,
+with the number of entries matches the row dimension of $\mathbf{M}_{i};$}}
+
+\STATE{$\vec{\sigma}:=\left[\vec{\sigma}_{\left\lceil \log k\right\rceil },\vec{\sigma}_{\left\lceil \log k\right\rceil -1},\dots,\vec{\sigma}_{1}\right]$;}
+
+\STATE{$\hat{\mathbf{M}}:=x^{\vec{\sigma}-\vec{b}-1}\mathbf{M};$}
+
+\STATE{$\mathbf{N}_{0}:=I_{n}$; $\tilde{\mathbf{N}}_{0}:=I_{n};$}
+
+\FOR{$i$ \textbf{from $1$ to $\left\lceil \log k\right\rceil $ }} 
+
+\forbody{\STATE{$\vec{s}_{i}:=-\cdeg_{-\vec{s}}\mathbf{N}_{i-1};$ (note $\vec{s}_{1}=\vec{s}$)}
+
+\STATE{$\mathbf{P}_{i}:=\umab\left(\hat{\mathbf{M}}_{i}\tilde{\mathbf{N}}_{i-1},\vec{\sigma}_{i},-\vec{s}_{i}\right)$; }
+
+\STATE{$\left[\mathbf{N}_{i},\mathbf{Q}_{i}\right]:=\mathbf{P}_{i}$, where
+$\mathbf{N}_{i}$ is a $\left(\hat{\mathbf{M}}_{i},-\vec{s}_{i}\right)$-kernel
+basis;}
+
+\STATE{$\tilde{\mathbf{N}_{i}}:=\tilde{\mathbf{N}}_{i-1}\cdot\mathbf{N}_{i};$ }
+
+\STATE{$\mathbf{R}:=\left[\mathbf{R},\tilde{\mathbf{N}}_{i-1}\mathbf{Q}_{i}\right]$;}}
+
+\STATE{$\mathbf{R}^{r}:=\colRev\left(\mathbf{R},-\vec{s},\cdeg_{-\vec{s}}\mathbf{R}\right);$}
+
+\RETURN $\left(\mathbf{R}^{r}\right)^{T}$ 
+\end{algorithmic}
+\end{algorithm}
+
+
+
+\subsection{Computational Cost}
+
+The cost of \prettyref{alg:unimodularCompletion} is dominated by
+the kernel basis computation, order basis computations, and the multiplications
+$\hat{\mathbf{M}}_{i}\tilde{\mathbf{N}}_{i-1}$, $\tilde{\mathbf{N}}_{i-1}\mathbf{N}_{i}$,
+and $\tilde{\mathbf{N}}_{i-1}\mathbf{Q}_{i}$. We know the kernel
+basis computation can be done with a cost of $O^{\sim}\left(n^{\omega}s\right)$
+from \prettyref{thm:kerncomp}.
+\begin{lem}
+An $\left(\hat{\mathbf{M}}_{i}\tilde{\mathbf{N}}_{i-1},\vec{\sigma}_{i},-\vec{s}_{i}\right)$-order
+basis can be computed with a cost of $O^{\sim}\left(n^{\omega}s\right)$. \end{lem}
+\begin{proof}
+From the construction of $\hat{\mathbf{M}}_{i}$, the matrix $\hat{\mathbf{M}}_{i}$
+and $\hat{\mathbf{M}}_{i}\tilde{\mathbf{N}}_{i-1}$ have less than
+$2^{i}$ rows. We also have $\sigma_{i}=\left\lceil \xi/2^{i-1}\right\rceil +1\in\Theta\left(\xi/2^{i}\right)$.
+Therefore, Algorithm 2 from \citet{ZL2012} for order basis computation
+with unbalanced shift can be used with a cost of $O^{\sim}\left(n^{\omega}s\right)$. 
+\end{proof}
+
+\begin{lem}
+The multiplications $\hat{\mathbf{M}}_{i}\tilde{\mathbf{N}}_{i-1}$
+can be done with a cost of $O^{\sim}\left(n^{\omega}s\right)$.\end{lem}
+\begin{proof}
+The dimension of $\hat{\mathbf{M}}_{i}$ is bounded by $2^{i}\times n$
+and 
+\[
+\sum\rdeg_{\vec{s}}\hat{\mathbf{M}}_{i}\le2^{i}\cdot\xi/2^{i-1}\in O\left(\xi\right).
+\]
+ We also have $\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{i-1}\le0$, or
+equivalently, $\rdeg\tilde{\mathbf{N}}_{i-1}\le\vec{s}$. We can now
+use \prettyref{thm:multiplyUnbalancedMatrices} to multiply $\tilde{\mathbf{N}}_{i-1}^{T}$
+and $\hat{\mathbf{M}}_{i}^{T}$ with a cost of $O^{\sim}\left(n^{\omega}s\right)$.\end{proof}
+\begin{lem}
+The multiplication $\tilde{\mathbf{N}}_{i-1}\mathbf{N}_{i}$ can be
+done with a cost of $O^{\sim}\left(n^{\omega}s\right)$.\end{lem}
+\begin{proof}
+We know $\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{i-1}=-\vec{s}_{i}$,
+and $\cdeg_{-\vec{s}_{i}}\mathbf{N}_{i}=-\vec{s}_{i+1}\le0.$ In other
+words, $\rdeg\mathbf{N}_{i}\le\vec{s}_{i}$, and $\rdeg_{\vec{s}_{i}}\tilde{\mathbf{N}}_{i-1}\le\vec{s}$,
+hence we can again use \prettyref{thm:multiplyUnbalancedMatrices}
+to multiply $\mathbf{N}_{i}^{T}$ and $\tilde{\mathbf{N}}_{i-1}^{T}$
+with a cost of $O^{\sim}\left(n^{\omega}s\right)$.\end{proof}
+\begin{lem}
+The multiplication $\tilde{\mathbf{N}}_{i-1}\mathbf{Q}_{i}$ can be
+done with a cost of $O^{\sim}\left(n^{\omega}s\right)$.\end{lem}
+\begin{proof}
+We know 
+\[
+\cdeg_{-\vec{s}_{i}}\mathbf{Q}_{i}\le\max\cdeg_{\vec{s}}\mathbf{P}=1,
+\]
+or equivalently, 
+\[
+\rdeg\mathbf{Q}_{i}\le\vec{s}_{i}+1.
+\]
+ But we also know that this $\mathbf{Q}_{i}$ from the order basis
+computation has a factor $xI$. Therefore, $\rdeg\left(\mathbf{Q}_{i}/x\right)\le\vec{s}_{i}$.
+In addition, $\rdeg_{\vec{s}_{i}}\tilde{\mathbf{N}}_{i-1}\le\vec{s}$
+as before. So we can again use \prettyref{thm:multiplyUnbalancedMatrices}
+to multiply $\mathbf{Q}_{i}^{T}$ and $\tilde{\mathbf{N}}_{i-1}^{T}$
+with a cost of $O^{\sim}\left(n^{\omega}s\right)$.\end{proof}
+\begin{thm}
+A unimodular completion of $\mathbf{F}$ can be computed with a cost
+of $O^{\sim}\left(n^{\omega}s\right)$ field operations. 
+\end{thm}
+
+\section{Conclusion\label{sec:Future-Research}}
+
+In this paper, we have presented an efficient deterministic algorithm
+for a unimodular completion of a matrix of polynomnials. Our algorithm
+computes a unimodular completion of an input matrix $\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$,
+$m<n$ with a cost of $O^{\sim}\left(n^{\omega}s\right)$, where $s$
+is the average of the $m$ largest column degrees of the input matrix.
+Future directions of interest include efficient deterministic unimodular
+completion in domains such as matrices of multivariate polynomials
+and matrices of differential or, more generally, of Ore operators.
+
+%\bibliographystyle{plainnat}
+\bibliographystyle{plain}
+\bibliography{paper}
+
+\end{document}
