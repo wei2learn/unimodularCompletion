@@ -2661,6 +2661,12 @@ It is useful to note that any degree bound remains the same after the reverse
 \end_layout
 
 \begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:reversedDegreeBound"
+
+\end_inset
+
 If 
 \begin_inset Formula $\mathbf{A}\in\mathbb{K}\left[x\right]^{n\times k}$
 \end_inset
@@ -2899,88 +2905,82 @@ with
 \end_layout
 
 \begin_layout Proof
-If 
-\begin_inset Formula $\mathbf{N}$
-\end_inset
-
- is a kernel basis of 
-\begin_inset Formula $\mathbf{A}$
-\end_inset
-
-, then 
-\begin_inset Formula 
-\begin{eqnarray*}
-\mathbf{A}^{r}\cdot\mathbf{N}^{c} & = & (x^{\vec{a}}\mathbf{A}(x^{-1})x^{\vec{u}})\cdot(x^{-\vec{u}}\mathbf{N}(x^{-1})x^{\vec{b}})\\
- & = & x^{\vec{a}}\cdot\mathbf{A}(x^{-1})\cdot\mathbf{N}(x^{-1})\cdot x^{\vec{b}}=0
-\end{eqnarray*}
-
-\end_inset
-
-and so 
-\begin_inset Formula $\mathbf{N}^{c}$
-\end_inset
-
- is a kernel basis of 
-\begin_inset Formula $\mathbf{A}^{r}$
-\end_inset
-
-.
- It remains to show minimality.
- Suppose 
-\begin_inset Formula $\mathbf{N}^{c}$
-\end_inset
-
- is not 
-\begin_inset Formula $\vec{u}$
-\end_inset
-
--minimal and we have another kernel basis 
-\begin_inset Formula $\mathbf{M}$
-\end_inset
-
- of 
-\begin_inset Formula $\mathbf{A}^{r}$
+First note that any vector 
+\begin_inset Formula $\mathbf{q}$
 \end_inset
 
  with 
-\begin_inset Formula $\vec{u}$
+\begin_inset Formula $\cdeg_{\vec{u}}\mathbf{q}=\alpha$
 \end_inset
 
--column degrees 
-\begin_inset Formula $\vec{c}$
-\end_inset
-
- that has some entry lower than the corresponding entry in 
-\begin_inset Formula $\vec{b}$
-\end_inset
-
-.
- Then 
-\begin_inset Formula $\mathbf{M}^{c}=\colRev\left(\mathbf{M},\vec{u},\vec{c}\right)$
-\end_inset
-
- is also a kernel of 
+ is in the kernel of 
 \begin_inset Formula $\mathbf{A}$
 \end_inset
 
- with lower 
-\begin_inset Formula $\vec{u}$
+ if and only if 
+\begin_inset Formula $\mathbf{q}^{c}=\colRev\left(\mathbf{q},\vec{u},\alpha\right)$
 \end_inset
 
--column degrees than 
-\begin_inset Formula $\vec{b}$
+ is in the kernel of 
+\begin_inset Formula $\mathbf{A}^{r}$
 \end_inset
 
-, contradicting the 
-\begin_inset Formula $\vec{u}$
+, since by 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:reverseMatrixProduct2"
+
 \end_inset
 
--minimality of 
+ 
+\begin_inset Formula $\mathbf{A}\cdot\mathbf{q}=0$
+\end_inset
+
+ implies 
+\begin_inset Formula 
+\[
+\mathbf{A}^{r}\cdot\mathbf{q}^{c}=\colRev\left(\mathbf{A}\cdot\mathbf{q},-\vec{a},\alpha\right)=0,
+\]
+
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{A}^{r}\cdot\mathbf{q}^{c}=0$
+\end_inset
+
+ implies 
+\begin_inset Formula 
+\[
+\mathbf{A}\cdot\mathbf{q}=\colRev\left(\mathbf{A}^{r}\cdot\mathbf{q}^{c},-\vec{a},\alpha\right)=0.
+\]
+
+\end_inset
+
+It follows that any matrix 
 \begin_inset Formula $\mathbf{N}$
+\end_inset
+
+ is a kernel basis of 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ if and only if 
+\begin_inset Formula $\colRev\left(\mathbf{N},\vec{u},\cdeg_{\vec{u}}\mathbf{N}\right)$
+\end_inset
+
+ is a kernel basis of 
+\begin_inset Formula $\mathbf{A}^{r}$
 \end_inset
 
 .
  
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:reversedDegreeBound"
+
+\end_inset
+
+ then ensures that the minimality also hold at the same time.
 \end_layout
 
 \begin_layout Section

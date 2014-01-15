@@ -668,10 +668,11 @@ It is not difficult to see that
 It is useful to note that any degree bound remains the same after
 the reverse operations.
 \begin{lem}
-If $\mathbf{A}\in\mathbb{K}\left[x\right]^{n\times k}$ has $\vec{u}$-column
-degrees bounded by the corresponding entries of $\vec{v}$, then $\colRev(\mathbf{A},\vec{u},\vec{v})$
-also has $\vec{u}$-column degrees bounded by the corresponding entries
-of $\vec{v}$.
+\label{lem:reversedDegreeBound}If $\mathbf{A}\in\mathbb{K}\left[x\right]^{n\times k}$
+has $\vec{u}$-column degrees bounded by the corresponding entries
+of $\vec{v}$, then $\colRev(\mathbf{A},\vec{u},\vec{v})$ also has
+$\vec{u}$-column degrees bounded by the corresponding entries of
+$\vec{v}$.
 \end{lem}
 As one would expect, applying two reverse operations gives back the
 original input.
@@ -724,18 +725,21 @@ $\vec{u}$-column degrees $\vec{b}$ is a $(\mathbf{A},\vec{u})$-kernel
 basis if and only if $\mathbf{N}^{c}=\colRev\left(\mathbf{N},\vec{u},\vec{b}\right)$
 is a $(\mathbf{A}^{r},\vec{u})$-kernel basis \end{lem}
 \begin{proof}
-If $\mathbf{N}$ is a kernel basis of $\mathbf{A}$, then 
-\begin{eqnarray*}
-\mathbf{A}^{r}\cdot\mathbf{N}^{c} & = & (x^{\vec{a}}\mathbf{A}(x^{-1})x^{\vec{u}})\cdot(x^{-\vec{u}}\mathbf{N}(x^{-1})x^{\vec{b}})\\
- & = & x^{\vec{a}}\cdot\mathbf{A}(x^{-1})\cdot\mathbf{N}(x^{-1})\cdot x^{\vec{b}}=0
-\end{eqnarray*}
-and so $\mathbf{N}^{c}$ is a kernel basis of $\mathbf{A}^{r}$. It
-remains to show minimality. Suppose $\mathbf{N}^{c}$ is not $\vec{u}$-minimal
-and we have another kernel basis $\mathbf{M}$ of $\mathbf{A}^{r}$
-with $\vec{u}$-column degrees $\vec{c}$ that has some entry lower
-than the corresponding entry in $\vec{b}$. Then $\mathbf{M}^{c}=\colRev\left(\mathbf{M},\vec{u},\vec{c}\right)$
-is also a kernel of $\mathbf{A}$ with lower $\vec{u}$-column degrees
-than $\vec{b}$, contradicting the $\vec{u}$-minimality of $\mathbf{N}$. 
+First note that any vector $\mathbf{q}$ with $\cdeg_{\vec{u}}\mathbf{q}=\alpha$
+is in the kernel of $\mathbf{A}$ if and only if $\mathbf{q}^{c}=\colRev\left(\mathbf{q},\vec{u},\alpha\right)$
+is in the kernel of $\mathbf{A}^{r}$, since by \prettyref{lem:reverseMatrixProduct2}
+$\mathbf{A}\cdot\mathbf{q}=0$ implies 
+\[
+\mathbf{A}^{r}\cdot\mathbf{q}^{c}=\colRev\left(\mathbf{A}\cdot\mathbf{q},-\vec{a},\alpha\right)=0,
+\]
+ and $\mathbf{A}^{r}\cdot\mathbf{q}^{c}=0$ implies 
+\[
+\mathbf{A}\cdot\mathbf{q}=\colRev\left(\mathbf{A}^{r}\cdot\mathbf{q}^{c},-\vec{a},\alpha\right)=0.
+\]
+It follows that any matrix $\mathbf{N}$ is a kernel basis of $\mathbf{A}$
+if and only if $\colRev\left(\mathbf{N},\vec{u},\cdeg_{\vec{u}}\mathbf{N}\right)$
+is a kernel basis of $\mathbf{A}^{r}$. \prettyref{lem:reversedDegreeBound}
+then ensures that the minimality also hold at the same time.
 \end{proof}
 
 \section{Unimodular completion}
