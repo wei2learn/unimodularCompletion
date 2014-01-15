@@ -2965,7 +2965,7 @@ It follows that any matrix
 \end_inset
 
  if and only if 
-\begin_inset Formula $\colRev\left(\mathbf{N},\vec{u},\cdeg_{\vec{u}}\mathbf{N}\right)$
+\begin_inset Formula $\mathbf{N}^{c}=\colRev\left(\mathbf{N},\vec{u},\cdeg_{\vec{u}}\mathbf{N}\right)$
 \end_inset
 
  is a kernel basis of 
