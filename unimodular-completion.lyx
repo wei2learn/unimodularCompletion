@@ -132,6 +132,7 @@
 
 \def\qed{\hspace*{2mm} \hfill $\Box $\bigskip}
 \newcommand{\ds}{\displaystyle}
+\newrefformat{alg}{Algorithm \ref{#1}}
 \end_preamble
 \use_default_options false
 \begin_modules
@@ -570,7 +571,7 @@ Given a matrix
 \begin_inset Formula $\mathbb{K}$
 \end_inset
 
-,where 
+, where 
 \begin_inset Formula $s$
 \end_inset
 
@@ -582,7 +583,11 @@ Given a matrix
 \begin_inset Formula $\mathbf{F}$
 \end_inset
 
-.
+ and 
+\begin_inset Formula $\omega$
+\end_inset
+
+ is the exponent on the cost of matrix multiplication.
  Here 
 \begin_inset Formula $O^{\sim}$
 \end_inset
@@ -1311,10 +1316,10 @@ Lists For two lists
 \begin_inset Formula 
 \[
 \begin{cases}
-\vec{a}\ge\vec{b} & \mbox{if }\bar{a}_{i}\ge\bar{b}_{i}\mbox{ for all }i\in\left[1,\dots n\right]\\
-\vec{a}\le\vec{b} & \mbox{if }\bar{a}_{i}\le\bar{b}_{i}\mbox{ for all }i\in\left[1,\dots n\right]\\
-\vec{a}>\vec{b} & \mbox{if }\vec{a}\ge\vec{b}\mbox{ and }\bar{a}_{j}>\bar{b}_{j}\mbox{ for at least one }j\in\left[1,\dots n\right]\\
-\vec{a}<\vec{b} & \mbox{if }\vec{a}\le\vec{b}\mbox{ and }\bar{a}_{j}<\bar{b}_{j}\mbox{ for at least one }j\in\left[1,\dots n\right].
+\vec{a}\ge\vec{b} & \mbox{if }\bar{a}_{i}\ge\bar{b}_{i}\mbox{ for all }i\in\left[1,\dots,n\right]\\
+\vec{a}\le\vec{b} & \mbox{if }\bar{a}_{i}\le\bar{b}_{i}\mbox{ for all }i\in\left[1,\dots,n\right]\\
+\vec{a}>\vec{b} & \mbox{if }\vec{a}\ge\vec{b}\mbox{ but }\bar{a}_{j}\ne\bar{b}_{j}\\
+\vec{a}<\vec{b} & \mbox{if }\vec{a}\le\vec{b}\mbox{ but }\bar{a}_{j}\ne\bar{b}_{j}
 \end{cases}
 \]
 
@@ -1832,8 +1837,18 @@ An essential subroutine needed in our algorithm, also based on the use of
 \begin_inset Formula $\mathbf{A}\cdot\mathbf{B}$
 \end_inset
 
- with unbalanced degrees.
- The following result follows from 
+ with unbalanced degrees
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+.
+ The following result follows from
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 after "Theorem 5.6"
@@ -1867,7 +1882,7 @@ name "thm:multiplyUnbalancedMatrices"
 
  
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Let 
@@ -1934,6 +1949,14 @@ Let
 \begin_inset Formula $\mathbf{A}$
 \end_inset
 
+ and 
+\begin_inset Formula $\bar{\xi}$
+\end_inset
+
+, a bound on the sum of the entries of 
+\begin_inset Formula $\vec{s}$
+\end_inset
+
 .
  Let 
 \begin_inset Formula $\mathbf{B}\in\mathbb{K}\left[x\right]^{n\times k}$
@@ -1952,7 +1975,7 @@ Let
 \end_inset
 
 -column degrees satisfying 
-\begin_inset Formula $\theta\in O\left(ns\right)$
+\begin_inset Formula $\theta\in O\left(\bar{\xi}\right)$
 \end_inset
 
 .
@@ -1965,11 +1988,14 @@ Let
 \end_inset
 
  with a cost of 
-\begin_inset Formula $O^{\sim}(n^{\omega}s)$
+\begin_inset Formula $O^{\sim}(n{}^{\omega}t)$
+\end_inset
+
+, where 
+\begin_inset Formula $t=\bar{\xi}/n$
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Subsection
@@ -1991,7 +2017,7 @@ Let
 \end_inset
 
  is the 
-\begin_inset Formula $\mathbb{F}\left[x\right]$
+\begin_inset Formula $\mathbb{K}\left[x\right]$
 \end_inset
 
 -module 
@@ -2048,6 +2074,19 @@ Given
 \end_inset
 
 -column reduced.
+ We also call a 
+\begin_inset Formula $\vec{s}$
+\end_inset
+
+-minimal (right) kernel basis of 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+ a 
+\begin_inset Formula $\left(\mathbf{F},\vec{s}\right)$
+\end_inset
+
+-kernel basis.
  
 \end_layout
 
@@ -2291,7 +2330,7 @@ order
 \end_inset
 
 for some 
-\begin_inset Formula $\mathbf{r}\in\mathbb{K}\left[\left[x\right]\right]^{m\times1}$
+\begin_inset Formula $\mathbf{r}\in\mathbb{K}\left[x\right]^{m\times1}$
 \end_inset
 
 .
@@ -2319,16 +2358,22 @@ Note that the matrix
 \begin_inset Formula $\mathbf{F}$
 \end_inset
 
- can also be a matrix of power series, but restricting it to matrix of polynomia
-ls is sufficient for practical computations, for our purpose in this paper,
- and for simplicity.
+ can also be a matrix of power series 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BeLa94"
+
+\end_inset
+
+, but restricting it to matrix of polynomials is sufficient for our purpose
+ in this paper.
  Also note that the order 
 \begin_inset Formula $\vec{\sigma}$
 \end_inset
 
  may not be uniform
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 as in some other applications of order basis, so the order of different
@@ -2488,6 +2533,57 @@ Any
 \end_layout
 
 \begin_layout Standard
+We will compute order bases with unbalanced shift using Algorithm 2 from
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ZL2012"
+
+\end_inset
+
+ with the following cost.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:unbalancedOrderBasisCost"
+
+\end_inset
+
+For an input matrix 
+\begin_inset Formula $\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$
+\end_inset
+
+, if the shift 
+\begin_inset Formula $\vec{s}$
+\end_inset
+
+ satisfies 
+\begin_inset Formula $\vec{s}\ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum\vec{s}\in O(m\sigma)$
+\end_inset
+
+, then a 
+\begin_inset Formula $\left(\mathbf{F},\sigma,-\vec{s}\right)$
+\end_inset
+
+-basis can be computed with a cost of 
+\begin_inset Formula $O^{\sim}(n^{\omega}a)$
+\end_inset
+
+ field operations, where 
+\begin_inset Formula $a=m\sigma/n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
 We will need a special case of Theorem 5.1 in 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -2506,7 +2602,7 @@ name "thm:combineOrderBases"
 
 \end_inset
 
- For an input matrix 
+ For a matrix 
 \begin_inset Formula $\mathbf{F}\in\mathbb{K}\left[x\right]^{m\times n}$
 \end_inset
 
@@ -2576,7 +2672,7 @@ name "thm:combineOrderBases"
 
 \begin_layout Standard
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 From 
@@ -2709,7 +2805,7 @@ name "lem:nullspaceBasisInOrderBasis"
 
 \end_inset
 
- For an input matrix 
+ For a matrix 
 \begin_inset Formula $\mathbf{A}\in\mathbb{K}\left[x\right]^{m\times n}$
 \end_inset
 
@@ -2806,7 +2902,7 @@ The existence of unimodular completion
 \end_layout
 
 \begin_layout Standard
-We know that vectors whose entries are relatively prime can be completed
+We know that row vectors whose entries are relatively prime can be completed
  to unimodular matrices.
  We also have a more general criterion on the existence of unimodular completion
  for matrices.
@@ -2866,7 +2962,8 @@ If
 \begin_inset Formula $\mathbf{F}$
 \end_inset
 
- has a unimodular column basis, then there exists a unimodular matrix 
+ has a unimodular column basis, then recall that there exists a unimodular
+ matrix 
 \begin_inset Formula $\mathbf{U}$
 \end_inset
 
@@ -2874,7 +2971,16 @@ If
 \begin_inset Formula $\mathbf{F}\mathbf{U}=\left[I_{m},0\right]$
 \end_inset
 
-, or 
+, where 
+\begin_inset Formula $I_{m}$
+\end_inset
+
+ is a column basis of 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+.
+ This gives 
 \begin_inset Formula $\mathbf{F}=\left[I_{m},0\right]\mathbf{U}^{-1}$
 \end_inset
 
@@ -2897,6 +3003,56 @@ If
 
  is therefore a unimodular completion of the matrix 
 \begin_inset Formula $\mathbf{F}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The proof of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:unimodularCompletionCondition"
+
+\end_inset
+
+ shows that a unimodular completion of 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+ can be obtained from the unimodular matrix 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+ that transforms 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+ to its column bases.
+ However, we may not be able to compute this 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+ efficiently since its degree might be too large.
+ More specifically, 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+ contains a kernel basis of 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+ that may have degree 
+\begin_inset Formula $\xi=\sum\vec{s}$
+\end_inset
+
+, while each of the remaining columns of 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+ may also have degree 
+\begin_inset Formula $\xi$
 \end_inset
 
 .
@@ -2945,7 +3101,7 @@ Let
 \end_inset
 
  be a degree shift, and 
-\begin_inset Formula $\mathbf{a}\in\mathbb{K}\left[x\right]^{n\times1}$
+\begin_inset Formula $\mathbf{a}=\left[a_{1},\dots,a_{n}\right]^{T}\in\mathbb{K}\left[x\right]^{n\times1}$
 \end_inset
 
 , a column vector with 
@@ -2960,9 +3116,9 @@ Let
  We define 
 \begin_inset Formula 
 \[
-\colRev(\mathbf{a},\vec{u},v)=x^{-\vec{u}}\mathbf{a}(x^{-1})~x^{v}=\begin{bmatrix}\rev(p,v-u_{1})\\
+\colRev(\mathbf{a},\vec{u},v)=x^{-\vec{u}}\mathbf{a}(x^{-1})~x^{v}=\begin{bmatrix}\rev(a_{1},v-u_{1})\\
 \vdots\\
-\rev(p,v-u_{n})
+\rev(a_{n},v-u_{n})
 \end{bmatrix}.
 \]
 
@@ -3174,8 +3330,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-The following lemmas shows the commutativity between reverse operations
- and multiplications.
+The following lemmas show the commutativity between reverse operations and
+ multiplications.
  
 \end_layout
 
@@ -3440,7 +3596,7 @@ In this section, we look at how a unimodular completion can be done using
 
 \begin_layout Standard
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Let us look informally to see how all these operations enter into the unimodular
@@ -3679,13 +3835,17 @@ name "lem:reverseOrderBasisToUnimodular"
 
 \end_inset
 
- Let 
+ Given any matrix 
+\begin_inset Formula $\mathbf{A}\in\mathbb{K}\left[x\right]^{m\times n}$
+\end_inset
+
+ and 
 \begin_inset Formula $\vec{u}\in\mathbb{Z}^{n}$
 \end_inset
 
  
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3708,11 +3868,11 @@ mathbb{Z}^{n}$
 
 \end_inset
 
-be a degree shift and 
+ a degree shift, if 
 \begin_inset Formula $\mathbf{P}$
 \end_inset
 
- a 
+ is an 
 \begin_inset Formula $\left(\mathbf{A},\sigma,\vec{u}\right)$
 \end_inset
 
@@ -3723,7 +3883,7 @@ be a degree shift and
 .
  
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3753,7 +3913,7 @@ Then
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3772,7 +3932,7 @@ mathbf{P}^c$ we see that we need only show that
 \end_layout
 
 \begin_layout Proof
-Note first that the identity matrix is a 
+Note first that the identity matrix is an 
 \begin_inset Formula $\left(\mathbf{A},0,\vec{u}\right)$
 \end_inset
 
@@ -3813,6 +3973,11 @@ key "BeLa94,Giorgi2003"
 \end_inset
 
  each time.
+ The minimality of order bases ensures that 
+\begin_inset Formula $\cdeg_{\vec{u}}\mathbf{Q}=\cdeg_{\vec{u}}\mathbf{P}=\vec{v}$
+\end_inset
+
+.
  As the 
 \begin_inset Formula $\vec{u}$
 \end_inset
@@ -3841,12 +4006,20 @@ key "BeLa94,Giorgi2003"
 -bases are unimodularly equivalent, we get 
 \begin_inset Formula 
 \[
-\det\left(\mathbf{P}\right)=\det\left(\mathbf{Q}\mathbf{U}\right)=c\cdot x^{\sum\vec{v}-\sum\vec{u}}.
+\det\left(\mathbf{P}\right)=\det\left(\mathbf{Q}\mathbf{U}\right)=c\cdot x^{\sum\vec{v}-\sum\vec{u}}
 \]
 
 \end_inset
 
+ for some unimodular matrix 
+\begin_inset Formula $\mathbf{U}\in\mathbb{K}\left[x\right]^{n\times n}$
+\end_inset
 
+ and nonzero constant 
+\begin_inset Formula $c\in\mathbb{K}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Proof
@@ -5231,7 +5404,11 @@ reference "thm:boundOfSumOfShiftedDegreesOfKernelBasis"
  Let 
 \begin_inset Formula 
 \[
-\mathbf{M}^{T}=\left[\mathbf{M}_{1}^{T},\mathbf{M}_{2}^{T},\cdots,\mathbf{M}_{\left\lceil \log k\right\rceil -1}^{T},\mathbf{M}_{\left\lceil \log k\right\rceil }^{T}\right]
+\mathbf{M}^{T}=\begin{bmatrix}\mathbf{M}_{1}\\
+\mathbf{M}_{2}\\
+\vdots\\
+\mathbf{M}_{\left\lceil \log k\right\rceil }
+\end{bmatrix}^{T}
 \]
 
 \end_inset
@@ -5287,7 +5464,7 @@ be the order in the order basis computation.
 \end{bmatrix}= & x^{\vec{\sigma}-\vec{b}-1}\begin{bmatrix}\mathbf{M}_{1}\\
 \vdots\\
 \mathbf{M}_{\left\lceil \log k\right\rceil }
-\end{bmatrix}=x^{\vec{\sigma}-\vec{b}-1}\mathbf{M}
+\end{bmatrix}=x^{\vec{\sigma}-\vec{b}-1}\mathbf{M}^{T}
 \end{eqnarray*}
 
 \end_inset
@@ -5298,7 +5475,7 @@ instead, so that the order of our problem in each block is uniform and a
 \end_inset
 
 -basis is a 
-\begin_inset Formula $\left(\mathbf{M},\vec{b}+1,-\vec{s}\right)$
+\begin_inset Formula $\left(\mathbf{M}^{T},\vec{b}+1,-\vec{s}\right)$
 \end_inset
 
 -basis.
@@ -5360,8 +5537,18 @@ key "ZL2012"
 \begin_inset Formula $O^{\sim}\left(n^{\omega}s\right)$
 \end_inset
 
+
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
 , where 
 \begin_inset Formula $s=\xi/n$
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 .
@@ -5409,14 +5596,45 @@ Compute an
 
 -kernel basis.
  Set 
-\begin_inset Formula $\vec{s}_{3}=-\cdeg_{-\vec{s}_{2}}\mathbf{N}_{2}$
+\begin_inset Formula $\tilde{\mathbf{N}}_{2}=\tilde{\mathbf{N}}_{1}\mathbf{N}_{2}$
 \end_inset
 
  and 
-\begin_inset Formula $\tilde{\mathbf{N}}_{2}=\tilde{\mathbf{N}}_{1}\mathbf{N}_{2}.$
+\begin_inset Formula $\vec{s}_{3}=-\cdeg_{-\vec{s}_{2}}\mathbf{N}_{2}$
 \end_inset
 
- 
+.
+ Note that 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\tilde{\mathbf{N}}_{2}$
+\end_inset
+
+ is a 
+\begin_inset Formula $-\vec{s}$
+\end_inset
+
+-minimal kernel basis of 
+\begin_inset Formula $\begin{bmatrix}\hat{\mathbf{M}}_{1}\\
+\hat{\mathbf{M}}_{2}
+\end{bmatrix}$
+\end_inset
+
+ with 
+\begin_inset Formula $\vec{s}_{3}=-\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{2}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -5445,21 +5663,86 @@ Continue this process, an
 \begin_inset Formula $\left(\hat{\mathbf{M}}_{i}\tilde{\mathbf{N}}_{i-1},-\vec{s}_{i}\right)$
 \end_inset
 
--kernel basis.
- Set 
+-kernel basis, where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\vec{s}_{i}=-\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{i-1}=-\cdeg_{-\vec{s}_{i-1}}\mathbf{N}_{i-1}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ Then 
 \begin_inset Formula 
 \[
-\tilde{\mathbf{N}}_{i}=\prod_{j=1}^{i}\mathbf{N}_{i}=\tilde{\mathbf{N}}_{i-1}\mathbf{N}_{i}.
+\tilde{\mathbf{N}}_{i}=\prod_{j=1}^{i}\mathbf{N}_{i}=\tilde{\mathbf{N}}_{i-1}\mathbf{N}_{i}
 \]
 
 \end_inset
 
-Note that 
+ is a 
+\begin_inset Formula $-\vec{s}$
+\end_inset
+
+-minimal kernel basis of the first 
+\begin_inset Formula $i$
+\end_inset
+
+ blocks of 
+\begin_inset Formula $\mathbf{M}^{T}$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ In particular, 
 \begin_inset Formula $\tilde{\mathbf{N}}_{\left\lceil \log k\right\rceil }$
 \end_inset
 
  is a 
-\begin_inset Formula $\left(\mathbf{M},-\vec{s}\right)$
+\begin_inset Formula $\left(\mathbf{M}^{T},-\vec{s}\right)$
 \end_inset
 
 -kernel basis.
@@ -5504,7 +5787,7 @@ reference "lem:unimodularComputationByRows"
 placement t
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption
@@ -5811,7 +6094,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-\begin_inset Formula $\vec{s}_{i}:=-\cdeg_{-\vec{s}}\mathbf{N}_{i-1};$
+\begin_inset Formula $\vec{s}_{i}:=-\cdeg_{-\vec{s}_{i-1}}\mathbf{N}_{i-1};$
 \end_inset
 
  (note 
@@ -5987,6 +6270,153 @@ reference "thm:kerncomp"
 \end_inset
 
 .
+ To determine the cost of order basis computations and multiplications,
+ it is helpful to first look at the size of 
+\begin_inset Formula $\vec{s}_{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:sSize"
+
+\end_inset
+
+The degrees 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+\vec{s}_{i}=-\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{i-1}=-\cdeg_{-\vec{s}_{i-1}}\mathbf{N}_{i-1}
+\]
+
+\end_inset
+
+ satisfy 
+\begin_inset Formula $\sum\vec{s}_{i}\le\xi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Recall that 
+\begin_inset Formula $\tilde{\mathbf{N}}_{i-1}$
+\end_inset
+
+ is a 
+\begin_inset Formula $-\vec{s}$
+\end_inset
+
+-minimal kernel basis of a matrix 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ consists of a subset of rows of 
+\begin_inset Formula $\mathbf{M}^{T}$
+\end_inset
+
+, which has 
+\begin_inset Formula $\cdeg_{\vec{s}}\mathbf{M}=\vec{b}$
+\end_inset
+
+, or 
+\begin_inset Formula $\rdeg_{\vec{s}}\mathbf{M}^{T}=\vec{b}$
+\end_inset
+
+.
+ Hence by 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:generaKernelBasisDegreeBound"
+
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+\sum-\vec{s}_{i}=\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{i-1}\le\sum\rdeg_{\vec{s}}\mathbf{A}-\sum\vec{s}\le\sum\vec{b}-\sum\vec{s},
+\]
+
+\end_inset
+
+which gives 
+\begin_inset Formula 
+\[
+\sum\vec{s}_{i}\le\sum\vec{s}-\sum\vec{b}\le\sum\vec{s}=\xi.
+\]
+
+\end_inset
+
+ Here recall that 
+\begin_inset Formula $\vec{b}=\cdeg_{\vec{s}}\mathbf{M}\ge0$
+\end_inset
+
+ since 
+\begin_inset Formula $\vec{s}\ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $\vec{b}\le\sum\vec{s}$
+\end_inset
+
+ by 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "thm:boundOfSumOfShiftedDegreesOfKernelBasis"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The order basis computation 
+\begin_inset Formula $\umab$
+\end_inset
+
+ in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "alg:unimodularCompletion"
+
+\end_inset
+
+ uses the algorithm for computing order basis with unbalanced shift from
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ZL2012,zhou:phd2012"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -6020,13 +6450,36 @@ From the construction of
 \begin_inset Formula $2^{i}$
 \end_inset
 
- rows.
+ rows, and for simplicity can be assumed to be 
+\begin_inset Formula $2^{i}$
+\end_inset
+
+ rows by appending zero rows.
  We also have 
 \begin_inset Formula $\sigma_{i}=\left\lceil \xi/2^{i-1}\right\rceil +1\in\Theta\left(\xi/2^{i}\right)$
 \end_inset
 
 .
- Therefore, Algorithm 2 from 
+ From 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:sSize"
+
+\end_inset
+
+ we also have 
+\begin_inset Formula $\sum\vec{s}_{i}\le\xi$
+\end_inset
+
+.
+ Therefore, the conditions of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "thm:unbalancedOrderBasisCost"
+
+\end_inset
+
+ are satisfied, and Algorithm 2 from 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ZL2012"
@@ -6071,7 +6524,14 @@ The dimension of
 
 \end_inset
 
-We also have 
+As in the proof of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:sSize"
+
+\end_inset
+
+ we also have 
 \begin_inset Formula $\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{i-1}\le0$
 \end_inset
 
@@ -6131,7 +6591,20 @@ We know
 \begin_inset Formula $\rdeg_{\vec{s}_{i}}\tilde{\mathbf{N}}_{i-1}\le\vec{s}$
 \end_inset
 
-, hence we can again use 
+.
+ We also have 
+\begin_inset Formula $\sum\vec{s}_{i}\le\xi$
+\end_inset
+
+ from 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:sSize"
+
+\end_inset
+
+.
+ Hence we can again use 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "thm:multiplyUnbalancedMatrices"
@@ -6201,6 +6674,18 @@ But we also know that this
 \end_inset
 
  as before.
+ We again have 
+\begin_inset Formula $\sum\vec{s}_{i}\le\xi$
+\end_inset
+
+ from 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lem:sSize"
+
+\end_inset
+
+.
  So we can again use 
 \begin_inset CommandInset ref
 LatexCommand formatted
