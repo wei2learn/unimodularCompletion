@@ -129,7 +129,6 @@
 
 
 
-
 \def\qed{\hspace*{2mm} \hfill $\Box $\bigskip}
 \newcommand{\ds}{\displaystyle}
 \newrefformat{alg}{Algorithm \ref{#1}}
@@ -161,16 +160,6 @@ algorithmics
 \paperfontsize default
 \spacing single
 \use_hyperref false
-\pdf_bookmarks true
-\pdf_bookmarksnumbered false
-\pdf_bookmarksopen false
-\pdf_bookmarksopenlevel 1
-\pdf_breaklinks true
-\pdf_pdfborder false
-\pdf_colorlinks true
-\pdf_backref section
-\pdf_pdfusetitle true
-\pdf_quoted_options "dvips,linkcolor=blue,citecolor=red,urlcolor=green,pdftex=true,hyperindex=true,pdfstartview=FitH,pdfpagelabels=true,linkcolor=blue,citecolor=red,urlcolor=green,hypertexnames=false"
 \papersize default
 \use_geometry false
 \use_amsmath 2
@@ -181,7 +170,7 @@ algorithmics
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
-\suppress_date true
+\suppress_date false
 \use_refstyle 0
 \index Index
 \shortcut idx
@@ -206,7 +195,7 @@ algorithmics
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -224,41 +213,99 @@ status open
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-conferenceinfo{ISSAC'14,} {July 23--25, 2014, Kobe, Japan.} 
-\end_layout
-
-\begin_layout Plain Layout
-
+conferenceinfo
 \end_layout
 
 \end_inset
 
 
 \begin_inset ERT
-status open
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ISSAC'14,
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+July 23--25, 2014, Kobe, Japan.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-CopyrightYear{2014}
-\end_layout
-
-\begin_layout Plain Layout
-
+CopyrightYear
 \end_layout
 
 \end_inset
 
 
 \begin_inset ERT
-status open
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+2014
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -269,6 +316,41 @@ crdata{978-1-60558-609-0/09/07}
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+crdata
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+978-1-4503-2501-1/14/07
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -478,6 +560,17 @@ status collapsed
 
 \begin_layout Plain Layout
 
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
 
 \backslash
 today
@@ -525,6 +618,17 @@ status collapsed
 \end_inset
 
 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Title
@@ -532,7 +636,7 @@ Unimodular Completion of Polynomial Matrices
 \end_layout
 
 \begin_layout Abstract
-Given a matrix 
+Given a rectangular matrix 
 \begin_inset Formula $\mathbf{F}\in\mathbb{K}[x]^{m\times n}$
 \end_inset
 
@@ -550,20 +654,108 @@ Given a matrix
 \end_inset
 
 .
- That is, our algorithm finds a polynomial matrix 
-\begin_inset Formula $\mathbf{G}\in\mathbb{K}[x]^{(n-m)\times n}$
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%That is, our algorithm finds a polynomial matrix $
+\backslash
+mathbf{G}
+\backslash
+in
+\backslash
+mathbb{K}[x]^{(n-m)
+\backslash
+times n}$
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
- such that the square matrix 
-\begin_inset Formula $\left[\begin{array}{c}
-\mathbf{F}\\
-\mathbf{G}
-\end{array}\right]$
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%such that the square matrix $
+\backslash
+left[
+\backslash
+begin{array}{c}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
- is unimodular.
- Our algorithm is deterministic and computes such a completion, when it
- exists, with cost 
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+mathbf{F}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+mathbf{G}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+end{array}
+\backslash
+right]$ is unimodular.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Our algorithm is deterministic and computes such a completion, when it exists,
+ with cost 
 \begin_inset Formula $O^{\sim}\left(n^{\omega}s\right)$
 \end_inset
 
@@ -571,7 +763,8 @@ Given a matrix
 \begin_inset Formula $\mathbb{K}$
 \end_inset
 
-, where 
+.
+ Here 
 \begin_inset Formula $s$
 \end_inset
 
@@ -603,12 +796,23 @@ Given a matrix
 \end_inset
 
 , or equivalently, computes a completion that preserves the generalized
- determinant, defined as the product of the entries of the Smith normal
- form.
+ determinant.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% defined as the product of the entries of the Smith normal form.
  
 \end_layout
 
-\begin_layout --Separator--
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -776,7 +980,7 @@ General Terms:
 \series bold
 Keywords:
 \series default
- Order Basis, Kernel Basis, Unimodular, Unimodular Completion
+ Order Basis, Minimal Kernel Basis, Unimodular Matrices, Unimodular Completion
 \end_layout
 
 \begin_layout Section
@@ -863,7 +1067,7 @@ generalized determinant
 .
  
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 We also wish to have a type of degree minimality for our completion problem,
@@ -961,6 +1165,16 @@ key "CluzeauQuadrat"
 \end_inset
 
 .
+ Additional applications in multidimensional systems theory, including a
+ description of a Maple package which implements the Quillen-Suslin theorem,
+ can be found in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Quadrat"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1000,15 +1214,11 @@ key "newman1972"
 \end_inset
 
  such that 
-\begin_inset Formula 
-\begin{equation}
-\mathbf{F}\cdot\mathbf{U}=[I_{m},0].\label{one}
-\end{equation}
-
+\begin_inset Formula $\mathbf{F}\cdot\mathbf{U}=[I_{m},0].$
 \end_inset
 
-For simplicity and without loss of generality, we focus our discussion on
- the situation where the unimodular completion always exists.
+ For simplicity and without loss of generality, we focus our discussion
+ on the situation where the unimodular completion always exists.
  For an input matrix that cannot be completed to a unimodular matrices,
  we can always factor it as 
 \begin_inset Formula $\mathbf{F}=\mathbf{T}\mathbf{G}$
@@ -1092,7 +1302,12 @@ key "BeLa94"
 
 \end_inset
 
- in a similar way to that used in the shifted minimal kernel basis algorithm
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+in a similar way to that used in the shifted minimal kernel basis algorithm
  of 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1100,10 +1315,84 @@ key "za2012"
 
 \end_inset
 
+ 
+\end_layout
+
+\end_inset
+
 .
- In our case we take advantage of the fact that order bases are closely
- related to unimodular matrices when one reverses the order of column coefficien
-ts.
+ 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+In our case w 
+\end_layout
+
+\end_inset
+
+We take advantage of the fact that order bases are closely related to unimodular
+ matrices when one reverses the order of column coefficients.
+ More precisely, we first reverse coefficients of 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+, then compute a kernel basis 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+ of this new object, and a left order basis 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+.
+ Reversing coefficients in 
+\begin_inset Formula $\mathbf{Q}$
+\end_inset
+
+ then gives a unimodular completion of 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+.
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+, one part essentially gives back 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+, and the other one 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%the missing piece 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\mathbf{G}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+ A major challenge lies in determining the right shifts and orders so that
+ the pieces both fit together and give a low complexity.
 \end_layout
 
 \begin_layout Section
@@ -1222,8 +1511,19 @@ status collapsed
 \end_inset
 
  which are needed for our discussion and algorithm.
- In addition, we discuss the various ways one can reverse the coefficients
+ 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+In addition, we discuss the various ways one can reverse the coefficients
  of matrix polynomials along with the properties of such reversals.
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1327,7 +1627,7 @@ Lists For two lists
 
 
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Summation
@@ -1610,6 +1910,7 @@ For a matrix
 \end_inset
 
 , the shifted column degree specializes to the standard column degree.
+ The shifted row degree is defined in a similar way.
 \end_layout
 
 \begin_layout Standard
@@ -1757,7 +2058,7 @@ If the
 
 \begin_layout Standard
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 A closely related result involving the shifted degrees is the following
@@ -1839,11 +2140,11 @@ An essential subroutine needed in our algorithm, also based on the use of
 
  with unbalanced degrees
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 .
- The following result follows from
+ The following result follows from 
 \end_layout
 
 \end_inset
@@ -1882,7 +2183,7 @@ name "thm:multiplyUnbalancedMatrices"
 
  
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Let 
@@ -1950,7 +2251,7 @@ Let
 \end_inset
 
  and 
-\begin_inset Formula $\bar{\xi}$
+\begin_inset Formula $\check{\xi}$
 \end_inset
 
 , a bound on the sum of the entries of 
@@ -1975,7 +2276,7 @@ Let
 \end_inset
 
 -column degrees satisfying 
-\begin_inset Formula $\theta\in O\left(\bar{\xi}\right)$
+\begin_inset Formula $\theta\in O\left(\check{\xi}\right)$
 \end_inset
 
 .
@@ -1992,10 +2293,11 @@ Let
 \end_inset
 
 , where 
-\begin_inset Formula $t=\bar{\xi}/n$
+\begin_inset Formula $t=\check{\xi}/n$
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -2223,6 +2525,27 @@ Such a basis can be represented as a full rank matrix
 \end_inset
 
  whose columns are the basis elements.
+ Equivalently, there exists a unimodular matrix 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+ that transforms the matrix 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbf{F}\mathbf{U}=\left[\mathbf{T},0\right]$
+\end_inset
+
+ with a full rank matrix 
+\begin_inset Formula $\mathbf{T}$
+\end_inset
+
+ defined as a column basis of 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2373,7 +2696,7 @@ key "BeLa94"
 
  may not be uniform
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 as in some other applications of order basis, so the order of different
@@ -2450,7 +2773,7 @@ key "BeLa94,BL1997"
 .
  
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Definition
 A polynomial matrix 
@@ -2542,6 +2865,7 @@ key "ZL2012"
 \end_inset
 
  with the following cost.
+ 
 \end_layout
 
 \begin_layout Theorem
@@ -2672,7 +2996,7 @@ name "thm:combineOrderBases"
 
 \begin_layout Standard
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 From 
@@ -3056,7 +3380,6 @@ reference "lem:unimodularCompletionCondition"
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Section
@@ -3129,6 +3452,14 @@ Similarly for a row vector
 \end_inset
 
  with 
+\begin_inset Formula $\rdeg_{\vec{u}}\mathbf{b}\le v$
+\end_inset
+
+,
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula $\vec{u}$
 \end_inset
 
@@ -3136,7 +3467,12 @@ Similarly for a row vector
 \begin_inset Formula $v$
 \end_inset
 
-, where 
+, 
+\end_layout
+
+\end_inset
+
+ where 
 \begin_inset Formula $\vec{u}=\left[u_{1},\dots u_{n}\right]\in\mathbb{Z}^{n}$
 \end_inset
 
@@ -3268,23 +3604,49 @@ If
 \end_inset
 
  has 
+\begin_inset Formula $\cdeg_{\vec{u}}\mathbf{A}\le\vec{v}$
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula $\vec{u}$
 \end_inset
 
 -column degrees bounded by the corresponding entries of 
 \begin_inset Formula $\vec{v}$
+\end_inset
+
+ 
+\end_layout
+
 \end_inset
 
 , then 
-\begin_inset Formula $\colRev(\mathbf{A},\vec{u},\vec{v})$
+\begin_inset Formula $\mathbf{A}^{c}=\colRev(\mathbf{A},\vec{u},\vec{v})$
 \end_inset
 
  also has 
+\begin_inset Formula $\cdeg_{\vec{u}}\mathbf{A}^{c}\le\vec{v}$
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula $\vec{u}$
 \end_inset
 
 -column degrees bounded by the corresponding entries of 
 \begin_inset Formula $\vec{v}$
+\end_inset
+
+ 
+\end_layout
+
 \end_inset
 
 .
@@ -3347,6 +3709,15 @@ If
 \end_inset
 
  has 
+\begin_inset Formula $\cdeg_{\vec{u}}\mathbf{A}\le\vec{v}$
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+has 
 \begin_inset Formula $\vec{u}$
 \end_inset
 
@@ -3354,11 +3725,24 @@ If
 \begin_inset Formula $\vec{v}$
 \end_inset
 
+ 
+\end_layout
+
+\end_inset
+
 , and 
 \begin_inset Formula $\mathbf{B}\in\mathbb{K}\left[x\right]^{n\times k}$
 \end_inset
 
  has 
+\begin_inset Formula $\cdeg_{\vec{v}}\mathbf{B}\le\vec{w}$
+\end_inset
+
+,
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula $\vec{v}$
 \end_inset
 
@@ -3366,7 +3750,12 @@ If
 \begin_inset Formula $\vec{w}$
 \end_inset
 
-, then 
+, 
+\end_layout
+
+\end_inset
+
+ then 
 \begin_inset Formula 
 \[
 \colRev(\mathbf{A},\vec{u},\vec{v})\colRev(\mathbf{B},\vec{v},\vec{w})=\colRev(\mathbf{A}\mathbf{B},\vec{u},\vec{w})
@@ -3402,6 +3791,14 @@ If
 \end_inset
 
  has 
+\begin_inset Formula $\rdeg_{\vec{u}}\mathbf{A}\le\vec{v}$
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula $\vec{u}$
 \end_inset
 
@@ -3409,16 +3806,34 @@ If
 \begin_inset Formula $\vec{v}$
 \end_inset
 
+ 
+\end_layout
+
+\end_inset
+
 , and 
 \begin_inset Formula $\mathbf{B}\in\mathbb{K}\left[x\right]^{n\times k}$
 \end_inset
 
  has 
+\begin_inset Formula $\cdeg_{-\vec{u}}\mathbf{B}\le\vec{w}$
+\end_inset
+
+
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 \begin_inset Formula $-\vec{u}$
 \end_inset
 
 -column degrees bounded by 
 \begin_inset Formula $\vec{w}$
+\end_inset
+
+ 
+\end_layout
+
 \end_inset
 
 , then 
@@ -3596,7 +4011,7 @@ In this section, we look at how a unimodular completion can be done using
 
 \begin_layout Standard
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Let us look informally to see how all these operations enter into the unimodular
@@ -3697,7 +4112,7 @@ Thus, we now have that
 \begin_inset Formula $\mathbf{F}^{r}$
 \end_inset
 
- and, taking tranposes of the rightmost equation in (
+ and, taking transposes of the rightmost equation in (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "three"
@@ -3765,7 +4180,7 @@ reference "lem:reverseOrderBasisToUnimodular"
 \begin_inset Formula $\mathbf{F}$
 \end_inset
 
- is equivalent to finding some order basis contaiining a reversed 
+ is equivalent to finding some order basis containing a reversed 
 \begin_inset Formula $\mathbf{F}$
 \end_inset
 
@@ -3845,7 +4260,7 @@ name "lem:reverseOrderBasisToUnimodular"
 
  
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3873,7 +4288,7 @@ mathbb{Z}^{n}$
 \end_inset
 
  is an 
-\begin_inset Formula $\left(\mathbf{A},\sigma,\vec{u}\right)$
+\begin_inset Formula $\left(\mathbf{A},\vec{\sigma},\vec{u}\right)$
 \end_inset
 
 -basis with 
@@ -3883,7 +4298,7 @@ mathbb{Z}^{n}$
 .
  
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3913,7 +4328,7 @@ Then
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3950,14 +4365,21 @@ Note first that the identity matrix is an
 
 .
  An 
-\begin_inset Formula $\left(\mathbf{A},\sigma,\vec{u}\right)$
+\begin_inset Formula $\left(\mathbf{A},\vec{\sigma},\vec{u}\right)$
 \end_inset
 
 -basis 
 \begin_inset Formula $\mathbf{Q}$
 \end_inset
 
- can then be constructed iteratively using the algorithms from 
+ can then be constructed iteratively based on 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "thm:combineOrderBases"
+
+\end_inset
+
+ and using the algorithms from 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BeLa94,Giorgi2003"
@@ -4000,7 +4422,7 @@ key "BeLa94,Giorgi2003"
 
 .
  Since any two 
-\begin_inset Formula $\left(\mathbf{A},\sigma,\vec{u}\right)$
+\begin_inset Formula $\left(\mathbf{A},\vec{\sigma},\vec{u}\right)$
 \end_inset
 
 -bases are unimodularly equivalent, we get 
@@ -4011,7 +4433,7 @@ key "BeLa94,Giorgi2003"
 
 \end_inset
 
- for some unimodular matrix 
+for some unimodular matrix 
 \begin_inset Formula $\mathbf{U}\in\mathbb{K}\left[x\right]^{n\times n}$
 \end_inset
 
@@ -4020,10 +4442,7 @@ key "BeLa94,Giorgi2003"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Proof
-Hence 
+ Hence 
 \begin_inset Formula 
 \begin{eqnarray*}
 \det\left(\mathbf{P}^{c}\right) & = & \det\left(x^{-\vec{u}}\left(\mathbf{P}(x^{-1})\right)x^{\vec{v}}\right)\\
@@ -4038,6 +4457,159 @@ and
 \end_inset
 
  is unimodular.
+ 
+\end_layout
+
+\begin_layout Example
+\begin_inset CommandInset label
+LatexCommand label
+name "example:5"
+
+\end_inset
+
+ Let 
+\begin_inset Formula $\mathbf{A}\in\Z_{5}[x]^{2\times4}$
+\end_inset
+
+ be given by
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\left[\begin{array}{cccc}
+0 & -{x}^{2} & 2\,{x}^{4}-1 & 2\,{x}^{4}+x-1\\
+\noalign{\medskip}-2\,{x}^{3} & {x}^{2} & -{x}^{4}+{x}^{3}+1 & -{x}^{3}-x+1
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left[\begin{array}{cccc}
+1 & 0 & 2+2\, x & 3+4\, x\\
+\noalign{\medskip}0 & {x}^{2} & 1+3\,{x}^{4} & 1+4\, x+3\,{x}^{4}
+\end{array}\right]
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula $\vec{u}=[-2,-3,-1,-1]$
+\end_inset
+
+ .
+ Then one can show that
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\mathbf{P}=\left[\begin{array}{cccc}
+{x}^{2}-2\, x & 2\, x-1 & -x & -x\\
+\noalign{\medskip}2 & 2\,{x}^{3}-1 & -{x}^{3}+1 & 1\\
+\noalign{\medskip}-2\, x & 2\, x-1 & -x & -x\\
+\noalign{\medskip}2\, x & -x+1 & x & x
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathbf{P}=\left[\begin{array}{cccc}
+4\, x+3\,{x}^{2} & 4+x+3\,{x}^{2} & {x}^{3} & 0\\
+\noalign{\medskip}1 & 2\,{x}^{3} & 0 & {x}^{4}\\
+\noalign{\medskip}4\, x & 4+x & 0 & 0\\
+\noalign{\medskip}x & 1 & 0 & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+is an 
+\begin_inset Formula $\left(\mathbf{A},[3,6],\vec{u}\right)$
+\end_inset
+
+-basis with 
+\begin_inset Formula $\cdeg_{\vec{u}}\mathbf{P}=[0,0,1,1]$
+\end_inset
+
+.
+ Reversing coefficients gives the unimodular matrix
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\mathbf{P}^{c}=\left[\begin{array}{cccc}
+-2\, x+1 & -{x}^{2}+2\, x & -x & -x\\
+\noalign{\medskip}2\,{x}^{3} & -{x}^{3}+2 & {x}^{3}-1 & {x}^{3}\\
+\noalign{\medskip}-2 & -x+2 & -1 & -1\\
+\noalign{\medskip}2 & x-1 & 1 & 1
+\end{array}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathbf{P}^{c}=\left[\begin{array}{cccc}
+4\, x+3 & 4\,{x}^{2}+x+3 & 1 & 0\\
+\noalign{\medskip}{x}^{3} & 2 & 0 & 1\\
+\noalign{\medskip}4 & 4\, x+1 & 0 & 0\\
+\noalign{\medskip}1 & x & 0 & 0
+\end{array}\right].
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+qed
+\end_layout
+
+\end_inset
+
  
 \end_layout
 
@@ -4172,7 +4744,17 @@ name "thm:unimodularComputation"
 \begin_inset Formula $(\mathbf{F}^{r},\vec{u})$
 \end_inset
 
--kernel basis with shifted column 
+-kernel basis with 
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+shifted column 
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula $\cdeg_{\vec{u}}\mathbf{M}=\vec{b}$
 \end_inset
 
@@ -4305,7 +4887,193 @@ reference "lem:unimodularEquivalenceNullspaceBasisOfNullspaceBasis"
 
 \end_inset
 
-a product of two unimodular matrices and hence is itself unimodular.
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%a product of two unimodular matrices and 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+hence is itself unimodular.
+ 
+\end_layout
+
+\begin_layout Example
+Let 
+\begin_inset Formula $\mathbf{F}\in\Z_{5}[x]^{2\times4}$
+\end_inset
+
+ be given by 
+\begin_inset Formula 
+\[
+\left[\begin{array}{cccc}
+-2\, x+1 & 2\,{x}^{3} & -2 & 2\\
+\noalign{\medskip}-{x}^{2}+2\, x & -{x}^{3}+2 & -x+2 & x-1
+\end{array}\right]
+\]
+
+\end_inset
+
+with shift 
+\begin_inset Formula $\vec{u}=[2,3,1,1]$
+\end_inset
+
+.
+ Then the transpose of a 
+\begin_inset Formula $\vec{u}$
+\end_inset
+
+-minimal kernel basis for the row reversed polynomial matrix, 
+\begin_inset Formula $\mathbf{F}^{r}$
+\end_inset
+
+, is given by
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\mathbf{M}=\left[\begin{array}{cc}
+0 & -2\,{x}^{3}\\
+\noalign{\medskip}-{x}^{2} & {x}^{2}\\
+\noalign{\medskip}2\,{x}^{4}-1 & -{x}^{4}+{x}^{3}+1\\
+\noalign{\medskip}2\,{x}^{4}+x-1 & -{x}^{3}-x+1
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\mathbf{M}^{T}=\left[\begin{array}{cccc}
+1 & 0 & 2+2\, x & 4\, x+3\\
+\noalign{\medskip}0 & {x}^{2} & 1+3\,{x}^{4} & 1+4\, x+3\,{x}^{4}
+\end{array}\right]
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $\vec{b}=\cdeg_{\vec{u}}\mathbf{M}=[2,5]$
+\end_inset
+
+.
+ An 
+\begin_inset Formula $(\mathbf{M}^{T},\vec{b}+1,-\vec{u})$
+\end_inset
+
+-order basis is given by
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\mathbf{P}=\left[\begin{array}{cccc}
+{x}^{2}-2\, x & 2\, x-1 & -x & -x\\
+\noalign{\medskip}2 & 2\,{x}^{3}-1 & -{x}^{3}+1 & 1\\
+\noalign{\medskip}-2\, x & 2\, x-1 & -x & -x\\
+\noalign{\medskip}2\, x & -x+1 & x & x
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\mathbf{P}=\left[\begin{array}{cccc}
+4\, x+3\,{x}^{2} & 4+x+3\,{x}^{2} & {x}^{3} & 0\\
+\noalign{\medskip}1 & 2\,{x}^{3} & 0 & {x}^{4}\\
+\noalign{\medskip}4\, x & 4+x & 0 & 0\\
+\noalign{\medskip}x & 1 & 0 & 0
+\end{array}\right]
+\]
+
+\end_inset
+
+from Example 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "example:5"
+
+\end_inset
+
+.
+ Reversing the last two columns of 
+\begin_inset Formula $\mathbf{P}$
+\end_inset
+
+ and taking transposes give a unimodular completion
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+{\mathbf{P}_{2}^{r}}^{T}=\left[\begin{array}{cccc}
+-x & {x}^{3}-1 & -1 & 1\\
+\noalign{\medskip}-x & {x}^{3} & -1 & 1
+\end{array}\right].
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathbf{P}_{2}^{rT}=\left[\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+\noalign{\medskip}0 & 1 & 0 & 0
+\end{array}\right].
+\]
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+qed
+\end_layout
+
+\end_inset
+
  
 \end_layout
 
@@ -4769,7 +5537,7 @@ reference "lem:boundOfSumOfShiftedDegreesOfOrderBasisWithNonuniformOrder"
 
  
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 This is because we can iteratively construct an 
@@ -5108,7 +5876,7 @@ Partition
 \begin_inset Newline newline
 \end_inset
 
-
+ 
 \begin_inset Formula $\left(\mathbf{M}^{T},\vec{b}+1,-\vec{s}\right)$
 \end_inset
 
@@ -5320,7 +6088,7 @@ key "zl2013"
 
 \begin_layout Standard
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 If 
@@ -5539,14 +6307,14 @@ key "ZL2012"
 
 
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 , where 
 \begin_inset Formula $s=\xi/n$
 \end_inset
 
-
+ 
 \end_layout
 
 \end_inset
@@ -5605,18 +6373,6 @@ Compute an
 
 .
  Note that 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula $\tilde{\mathbf{N}}_{2}$
 \end_inset
 
@@ -5635,6 +6391,7 @@ Compute an
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -5664,33 +6421,9 @@ Continue this process, an
 \end_inset
 
 -kernel basis, where 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula $\vec{s}_{i}=-\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{i-1}=-\cdeg_{-\vec{s}_{i-1}}\mathbf{N}_{i-1}$
 \end_inset
 
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
 .
  Then 
 \begin_inset Formula 
@@ -5700,7 +6433,7 @@ Continue this process, an
 
 \end_inset
 
- is a 
+is a 
 \begin_inset Formula $-\vec{s}$
 \end_inset
 
@@ -5712,31 +6445,7 @@ Continue this process, an
 \begin_inset Formula $\mathbf{M}^{T}$
 \end_inset
 
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
 .
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
  In particular, 
 \begin_inset Formula $\tilde{\mathbf{N}}_{\left\lceil \log k\right\rceil }$
 \end_inset
@@ -6258,15 +6967,15 @@ reference "alg:unimodularCompletion"
 \end_inset
 
 .
- We know the kernel basis computation can be done with a cost of 
-\begin_inset Formula $O^{\sim}\left(n^{\omega}s\right)$
-\end_inset
-
- from 
+ From 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "thm:kerncomp"
 
+\end_inset
+
+ we know the kernel basis computation can be done with a cost of 
+\begin_inset Formula $O^{\sim}\left(n^{\omega}s\right)$
 \end_inset
 
 .
@@ -6286,27 +6995,11 @@ name "lem:sSize"
 
 \end_inset
 
-The degrees 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula 
-\[
-\vec{s}_{i}=-\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{i-1}=-\cdeg_{-\vec{s}_{i-1}}\mathbf{N}_{i-1}
-\]
-
+The shifted degrees 
+\begin_inset Formula $\vec{s}_{i}=-\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{i-1}=-\cdeg_{-\vec{s}_{i-1}}\mathbf{N}_{i-1}$
 \end_inset
 
- satisfy 
+satisfy 
 \begin_inset Formula $\sum\vec{s}_{i}\le\xi$
 \end_inset
 
@@ -6347,18 +7040,6 @@ reference "lem:generaKernelBasisDegreeBound"
 \end_inset
 
  
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
 \begin_inset Formula 
 \[
 \sum-\vec{s}_{i}=\cdeg_{-\vec{s}}\tilde{\mathbf{N}}_{i-1}\le\sum\rdeg_{\vec{s}}\mathbf{A}-\sum\vec{s}\le\sum\vec{b}-\sum\vec{s},
@@ -6374,7 +7055,7 @@ which gives
 
 \end_inset
 
- Here recall that 
+Here recall that 
 \begin_inset Formula $\vec{b}=\cdeg_{\vec{s}}\mathbf{M}\ge0$
 \end_inset
 
@@ -6394,6 +7075,7 @@ reference "thm:boundOfSumOfShiftedDegreesOfKernelBasis"
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -6412,7 +7094,7 @@ reference "alg:unimodularCompletion"
  
 \begin_inset CommandInset citation
 LatexCommand citep
-key "ZL2012,zhou:phd2012"
+key "zhou:phd2012,ZL2012"
 
 \end_inset
 
