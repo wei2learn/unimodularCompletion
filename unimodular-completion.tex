@@ -166,15 +166,30 @@
 \newcommand{\ds}{\displaystyle}
 \newrefformat{alg}{Algorithm \ref{#1}}
 
+\def\doi#1{\gdef\@doi{#1}}\def\@doi{}
+\global\copyrightetc{%Copyright \the\copyrtyr\ 
+ACM \the\acmcopyr\ ...\$15.00}
+\toappear{\the\boilerplate\par{\confname{\the\conf}}\the\confinfo\par\the\copyrightetc.\ifx\@doi\@empty\else\par\@doi.\fi}
+\newfont{\mycrnotice}{ptmr8t at 7pt}
+\newfont{\myconfname}{ptmri8t at 7pt}
+\let\crnotice\mycrnotice%
+\let\confname\myconfname%
+
 \makeatother
 
 \begin{document}
+
+
 % --- Author Metadata here ---
+% Permission Statement
+\permission{Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than the author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from Permissions@acm.org.}
 
-
-\conferenceinfo{ISSAC'14,} {July 23--25, 2014, Kobe, Japan.}
-\CopyrightYear{2014} %\crdata{978-1-60558-609-0/09/07} 
+% Conference Information
+\conferenceinfo{ISSAC '14,}{July 21 - 25, 2014, Kobe, Japan\\ 
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.}
 \crdata{978-1-4503-2501-1/14/07}
+% DOI
+\doi{http://dx.doi.org/10.1145/2608628.2608640}
 
 
 \author{\alignauthor Wei Zhou and George Labahn\\
@@ -1326,13 +1341,13 @@ Combining this with
 we then get $\cdeg_{-\vec{s}}\mathbf{P}_{2}=1.$ 
 \end{proof}
 We are now ready to look at the procedure for computing a $\left(\mathbf{M}^{T},\vec{b}+1,-\vec{s}\right)$-basis,
-given in Algorithm \prettyref{alg:unimodularCompletion}. The situation
-here is similar to the situation in computing a left kernel basis
-in the column basis computation from \citep{zl2013}. That is, the
-order $\vec{b}+1$, or equivalently, the $\vec{s}$-row degrees of
-$\mathbf{M}^{T}$ may be unbalanced and can have degree as large as
-$\sum\vec{s}$. We therefore follow the same process as in the computation
-of column bases \citep{zl2013}.
+given in \prettyref{alg:unimodularCompletion}. The situation here
+is similar to the situation in computing a left kernel basis in the
+column basis computation from \citep{zl2013}. That is, the order
+$\vec{b}+1$, or equivalently, the $\vec{s}$-row degrees of $\mathbf{M}^{T}$
+may be unbalanced and can have degree as large as $\sum\vec{s}$.
+We therefore follow the same process as in the computation of column
+bases \citep{zl2013}.
 
 \begin{comment}
 If $k$ is the column dimension of $\mathbf{M}$ and $\xi$ is an
